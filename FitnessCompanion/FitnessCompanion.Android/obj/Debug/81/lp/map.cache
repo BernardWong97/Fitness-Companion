@@ -1,6 +1,7 @@
 FitnessCompanion
-System.Runtime
 FormsViewGroup
+Newtonsoft.Json
+System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
 Xamarin.Android.Arch.Lifecycle.Runtime
@@ -24,13 +25,4 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
-Google.Protobuf
-MySql.Data
-System.Configuration.ConfigurationManager
-System.Security.AccessControl
-System.Security.Permissions
-System.Security.Principal.Windows
 netstandard
-System.Reflection.Extensions
-System.Text.Encoding.CodePages
-Newtonsoft.Json

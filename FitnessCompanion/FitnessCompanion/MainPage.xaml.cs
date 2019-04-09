@@ -13,20 +13,20 @@ namespace FitnessCompanion
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = new MainPageViewModel(new PageService());
         }
 
+        #region Click Event Handler
         private void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            List<User> userList = new List<User>();
-            userList = User.ReadUserListData();
-            User user1 = userList[0];
-
-            u1.BindingContext = user1;
-        }
+            
+        } // BtnLogin_Clicked()
 
         private void BtnRegister_Clicked(object sender, EventArgs e)
         {
 
-        }
-    }
-}
+        } // BtnRegister_Clicked()
+
+        #endregion
+    } // class
+} // namespace

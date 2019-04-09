@@ -35,9 +35,11 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\R.txt
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\uploadflags.txt
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.dll
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.dll
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\FormsViewGroup.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\Mono.Android.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\mscorlib.pdb
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\Newtonsoft.Json.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.Core.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.Xml.pdb
@@ -55,12 +57,12 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.Runtime.Serialization.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.ServiceModel.Internals.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.Web.Services.pdb
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\System.Security.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\Mono.Security.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\FitnessCompanion.Android.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\FormsViewGroup.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\Mono.Android.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\mscorlib.pdb
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\Newtonsoft.Json.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.Core.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.Xml.pdb
@@ -78,7 +80,6 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.Runtime.Serialization.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.ServiceModel.Internals.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\System.Security.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\Mono.Security.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\FitnessCompanion.dll.mdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\FitnessCompanion.dll.mdb

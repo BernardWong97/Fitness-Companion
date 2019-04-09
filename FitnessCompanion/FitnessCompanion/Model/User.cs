@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -9,9 +10,12 @@ namespace FitnessCompanion
 {
     public class User
     {
+        #region member attributes
         public string Username { get; set; }
         public string Password { get; set; }
+        #endregion
 
+        #region constructors
         public User(){ }
 
         public User(string uname, string pw)
@@ -19,13 +23,15 @@ namespace FitnessCompanion
             Username = uname;
             Password = pw;
         }
+        #endregion
 
-        public static List<User> ReadUserListData()
+        #region public methods
+        public static ObservableCollection<User> ReadUserListData()
         {
-            List<User> userList = new List<User>();
+            ObservableCollection<User> userList = new ObservableCollection<User>();
             string jsonText;
 
-            try  // reading the localApplicationFolder first
+            try
             {
                 string path = Environment.GetFolderPath(
                                 Environment.SpecialFolder.LocalApplicationData);
@@ -33,41 +39,36 @@ namespace FitnessCompanion
                 using (var reader = new StreamReader(filename))
                 {
                     jsonText = reader.ReadToEnd();
-                    // need json library
                 }
             }
-            catch // fallback is to read the default file
+            catch
             {
-                var assembly = IntrospectionExtensions.GetTypeInfo(
-                                                typeof(MainPage)).Assembly;
-                // create the stream
-                Stream stream = assembly.GetManifestResourceStream(
-                                    "FitnessCompanion.Data.credentials.txt");
+                var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
+
+                Stream stream = assembly.GetManifestResourceStream("FitnessCompanion.Data.credentials.txt");
                 using (var reader = new StreamReader(stream))
                 {
                     jsonText = reader.ReadToEnd();
-                    // include JSON library now
                 }
             }
 
-            userList = JsonConvert.DeserializeObject<List<User>>(jsonText);
+            userList = JsonConvert.DeserializeObject<ObservableCollection<User>>(jsonText);
 
             return userList;
-        }
+        } // ReadUserListData()
 
-        public static void SaveUserListData(List<User> saveList)
+        public static void SaveUserListData(ObservableCollection<User> saveList)
         {
-            // need the path to the file
-            string path = Environment.GetFolderPath(
-                Environment.SpecialFolder.LocalApplicationData);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
             string filename = Path.Combine(path, Util.CREDENTIAL_FILE);
-            // use a stream writer to write the list
+           
             using (var writer = new StreamWriter(filename, false))
             {
-                // stringify equivalent
                 string jsonText = JsonConvert.SerializeObject(saveList);
                 writer.WriteLine(jsonText);
             }
-        }
-    }
-}
+        } // SaveUserListData()
+        #endregion
+    } // class
+} // namespace
