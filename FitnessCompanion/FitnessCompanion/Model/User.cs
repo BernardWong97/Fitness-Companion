@@ -69,6 +69,17 @@ namespace FitnessCompanion
                 writer.WriteLine(jsonText);
             }
         } // SaveUserListData()
+
+        public bool Equals(User anotherUser)
+        {
+            if(this.Username.Equals(anotherUser.Username)
+                && this.Password.Equals(anotherUser.Password))
+            {
+                return true;
+            }
+
+            return false;
+        } // Equals()
         #endregion
     } // class
 } // namespace

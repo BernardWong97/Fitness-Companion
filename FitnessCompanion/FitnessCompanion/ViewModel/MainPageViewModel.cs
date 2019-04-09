@@ -31,6 +31,19 @@ namespace FitnessCompanion
         {
             User.SaveUserListData(UsersList);
         } // SaveList()
+
+        public bool Login(User loggingUser)
+        {
+            bool success = false;
+
+            foreach (User u in UsersList)
+            {
+                success = u.Equals(loggingUser);
+                break;
+            }
+
+            return success;
+        } // Login()
         #endregion
     } // class
 } // namespace

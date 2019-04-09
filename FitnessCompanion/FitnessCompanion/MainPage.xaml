@@ -28,28 +28,9 @@
         <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
             <Button x:Name="btnLogin" Text="Login" Margin="2" Clicked="BtnLogin_Clicked"/>
             <Button x:Name="btnRegister" Text="Register" Margin="2" Clicked="BtnRegister_Clicked"/>
+            <Label x:Name="test"/>
         </StackLayout>
-
-        <ListView x:Name="lvUsers"
-                  Margin="3, 3, 3, 0"
-                  ItemsSource="{Binding UsersList}" Grid.Row="3">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Margin="2">
-                            <StackLayout Orientation="Horizontal" Margin="2, 1">
-                                <Label Text="Username: " />
-                                <Label Text="{Binding Path=Username}" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="2, 1">
-                                <Label Text="Password: " />
-                                <Label Text="{Binding Path=Password}" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        
     </Grid>
 
 </ContentPage>
