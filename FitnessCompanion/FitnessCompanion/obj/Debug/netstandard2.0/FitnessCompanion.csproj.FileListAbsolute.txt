@@ -1,0 +1,12 @@
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.deps.json
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.dll
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\FitnessCompanion.csprojAssemblyReference.cache
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\FitnessCompanion.csproj.CoreCompileInputs.cache
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\FitnessCompanion.AssemblyInfoInputs.cache
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\FitnessCompanion.AssemblyInfo.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.pdb
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\FitnessCompanion.dll
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\FitnessCompanion.pdb
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\XamlC.stamp
