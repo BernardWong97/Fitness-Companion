@@ -10,5 +10,6 @@ namespace FitnessCompanion
     {
         Task PushAsync(Page page);
         Task<bool> DisplayAlert(string title, string message, string ok, string cancel);
+        void ChangeMainPage(Page page);
     } // interface
 } // namespace

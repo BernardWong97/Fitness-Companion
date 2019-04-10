@@ -1,3 +1,14 @@
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\FitnessCompanion.UWP.csprojAssemblyReference.cache
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.g.i.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.g.i.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\XamlTypeInfo.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.xaml
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.xaml
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.xbf
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.xbf
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\XamlSaveStateFile.xml
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\App.xbf
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\MainPage.xbf
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\FitnessCompanion.UWP.xr.xml
@@ -8,6 +19,8 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Core\AppxManifest.xml
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Core\FitnessCompanion.UWP.exe
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\FitnessCompanion.UWP.build.appxrecipe
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Newtonsoft.Json.dll
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Newtonsoft.Json.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\clrcompression.dll
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Microsoft.CSharp.dll
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Microsoft.VisualBasic.dll
@@ -179,17 +192,6 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\FitnessCompanion.dll
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\FitnessCompanion.pdb
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\FitnessCompanion.UWP.csprojAssemblyReference.cache
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.g.i.cs
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.g.cs
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.g.i.cs
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.g.cs
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\XamlTypeInfo.g.cs
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.xaml
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.xaml
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\App.xbf
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\MainPage.xbf
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\XamlSaveStateFile.xml
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\FitnessCompanion.UWP.csproj.CoreCompileInputs.cache
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\XamlC.stamp
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\FitnessCompanion.UWP.csproj.CopyComplete
@@ -300,5 +302,3 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\ProjectArchitectures.txt
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758552200000000.json
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Newtonsoft.Json.dll
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Newtonsoft.Json.pdb

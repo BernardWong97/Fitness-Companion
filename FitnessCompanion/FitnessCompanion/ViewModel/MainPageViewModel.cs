@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FitnessCompanion
 {
@@ -39,11 +40,21 @@ namespace FitnessCompanion
             foreach (User u in UsersList)
             {
                 success = u.Equals(loggingUser);
-                break;
+
+                if (success)
+                {
+                    _pageService.ChangeMainPage(new CaloriesTracker());
+                    break;
+                }
             }
 
             return success;
         } // Login()
+
+        public async Task Register()
+        {
+            await _pageService.PushAsync(new RegisterPage());
+        }
         #endregion
     } // class
 } // namespace

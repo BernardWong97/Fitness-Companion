@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessCompanion.Android", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessCompanion.UWP", "FitnessCompanion\FitnessCompanion.UWP\FitnessCompanion.UWP.csproj", "{D1213A33-01D3-4F95-81C7-F6960C2D97BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessCompanion", "FitnessCompanion\FitnessCompanion\FitnessCompanion.csproj", "{55B3EE95-39AB-48D6-9BD1-B4C0550CD10E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessCompanion", "FitnessCompanion\FitnessCompanion\FitnessCompanion.csproj", "{55B3EE95-39AB-48D6-9BD1-B4C0550CD10E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
