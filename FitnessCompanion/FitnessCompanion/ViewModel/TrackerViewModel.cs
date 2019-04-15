@@ -48,7 +48,7 @@ namespace FitnessCompanion
             Grid dataGrid = new Grid { ColumnSpacing = 1, RowSpacing = 1, Padding = 2};
             int rowNum = 1;
 
-            for(var i = 0; i <= BreakfastIntake.Count; i++)
+            for(var i = 0; i < intakeList.Count + 2; i++)
             {
                 dataGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
             } // for
@@ -116,6 +116,9 @@ namespace FitnessCompanion
 
                 rowNum++;
             } // foreach
+
+            SetFootings(dataGrid, intakeList, rowNum);
+
             return dataGrid;
         } // DataGrid()
 
@@ -169,6 +172,81 @@ namespace FitnessCompanion
                 dataGrid.Children.Add(label, i, 0);
             } // for
         } // SetHeadings()
+
+        public void SetFootings(Grid dataGrid, List<Intake> intakeList, int rowNum)
+        {
+            string txt = "";
+
+            for (var i = 0; i < 7; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        txt = "Totals";
+                        break;
+                    case 1:
+                        txt = CalcTotals(intakeList, "Calories");
+                        break;
+                    case 2:
+                        txt = CalcTotals(intakeList, "Carbs");
+                        break;
+                    case 3:
+                        txt = CalcTotals(intakeList, "Fat");
+                        break;
+                    case 4:
+                        txt = CalcTotals(intakeList, "Protein");
+                        break;
+                    case 5:
+                        txt = CalcTotals(intakeList, "Sodium");
+                        break;
+                    case 6:
+                        txt = CalcTotals(intakeList, "Sugar");
+                        break;
+                } // switch
+
+                Label label = new Label
+                {
+                    Text = txt,
+                    BackgroundColor = Color.LightGray,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    TextColor = Color.Blue
+                };
+
+                dataGrid.Children.Add(label, i, rowNum);
+            } // for
+
+        } // SetFootings()
+
+        public string CalcTotals(List<Intake> intakeList, string nutrientType)
+        {
+            int total = 0;
+            foreach(var intake in intakeList)
+            {
+                switch (nutrientType)
+                {
+                    case "Calories":
+                        total += intake.Calories;
+                        break;
+                    case "Carbs":
+                        total += intake.Carbs;
+                        break;
+                    case "Fat":
+                        total += intake.Fat;
+                        break;
+                    case "Protein":
+                        total += intake.Protein;
+                        break;
+                    case "Sodium":
+                        total += intake.Sodium;
+                        break;
+                    case "Sugar":
+                        total += intake.Sugar;
+                        break;
+                } // switch
+            } // foreach
+
+            return total.ToString();
+        } // CalcTotals
         #endregion
     } // class
 } // namespace

@@ -12,6 +12,6 @@
  ],
  "Dinner": [],
  "Snacks": [
-  {"Name": "Apple", "Calories": 90, "Carbs": 22, "Fat": 0, "Protein": 0, "Sodium": 0, "Sugar": 16}
+  {"Name": "Apple", "Calories": 80, "Carbs": 22, "Fat": 0, "Protein": 0, "Sodium": 0, "Sugar": 16}
  ]}
 ]
