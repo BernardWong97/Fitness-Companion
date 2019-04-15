@@ -14,7 +14,10 @@ namespace FitnessCompanion
         public List<Intake> LunchIntake { get; private set; } = new List<Intake>();
         public List<Intake> DinnerIntake { get; private set; } = new List<Intake>();
         public List<Intake> SnacksIntake { get; private set; } = new List<Intake>();
-        public Grid BreakfastGrid { get; private set; } = new Grid { BackgroundColor = Color.Black, ColumnSpacing = 1, RowSpacing = 1 };
+        public Grid BreakfastGrid;
+        public Grid LunchGrid;
+        public Grid DinnerGrid;
+        public Grid SnacksGrid;
         private readonly IPageService _pageService;
         #endregion
 
@@ -24,6 +27,9 @@ namespace FitnessCompanion
             _pageService = pageService;
             ReadIntakeList();
             BreakfastGrid = DataGrid(BreakfastIntake, "Breakfast");
+            LunchGrid = DataGrid(LunchIntake, "Lunch");
+            DinnerGrid = DataGrid(DinnerIntake, "Dinner");
+            SnacksGrid = DataGrid(SnacksIntake, "Snacks");
         }
         #endregion
 
@@ -64,7 +70,6 @@ namespace FitnessCompanion
                     Text = intake.Name,
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 0, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -72,7 +77,6 @@ namespace FitnessCompanion
                     Text = intake.Calories.ToString(),
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 1, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -80,7 +84,6 @@ namespace FitnessCompanion
                     Text = intake.Carbs.ToString(),
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 2, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -88,7 +91,6 @@ namespace FitnessCompanion
                     Text = intake.Fat.ToString(),
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 3, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -96,7 +98,6 @@ namespace FitnessCompanion
                     Text = intake.Protein.ToString(),
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 4, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -104,7 +105,6 @@ namespace FitnessCompanion
                     Text = intake.Sodium.ToString(),
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 5, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -112,7 +112,6 @@ namespace FitnessCompanion
                     Text = intake.Sugar.ToString(),
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Margin = 2,
                 }, 6, rowNum);
 
                 rowNum++;
@@ -154,7 +153,8 @@ namespace FitnessCompanion
                 {
                     Text = txt,
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    Margin = 2
                 };
 
                 dataGrid.Children.Add(label, i, 0);
