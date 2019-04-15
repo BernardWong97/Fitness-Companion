@@ -22,7 +22,7 @@
             <Label Text="Username"/>
             <Entry x:Name="entUsername" Text=""/>
             <Label Text="Password"/>
-            <Entry x:Name="entPassword" IsPassword="True"/>
+            <Entry x:Name="entPassword" IsPassword="True" Completed="BtnLogin_Clicked"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
