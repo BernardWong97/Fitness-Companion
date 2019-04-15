@@ -16,6 +16,10 @@ namespace FitnessCompanion
 		{
 			InitializeComponent ();
             this.BindingContext = new TrackerViewModel(new PageService());
+            bfastDataGrid = (BindingContext as TrackerViewModel).BreakfastGrid;
+            Grid.SetRow(bfastDataGrid, 1);
+            Grid.SetColumnSpan(bfastDataGrid, 7);
+            breakfastGrid.Children.Add(bfastDataGrid);
         }
 	}
 }

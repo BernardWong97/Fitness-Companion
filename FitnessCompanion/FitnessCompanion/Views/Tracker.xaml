@@ -4,11 +4,8 @@
              x:Class="FitnessCompanion.Tracker"
              Title="Tracker">
     <ContentPage.Content>
-        <Grid>
+        <Grid x:Name="contentGrid" Margin="150, 10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -16,13 +13,13 @@
             <Label Text="Nutrient Intake Tracker" HorizontalOptions="Center"
                Margin="0,10" Grid.Row="0"/>
 
-            <Grid Grid.Row="1">
+            <Grid x:Name="breakfastGrid" Grid.Row="1" BackgroundColor="Black" ColumnSpacing="1" RowSpacing="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -32,34 +29,15 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Breakfast" HorizontalOptions="Start" Margin="5,2" Grid.Row="0" Grid.Column="0"/>
-                <Label Text="Calories" HorizontalOptions="Center" Margin="5,2" Grid.Row="0" Grid.Column="1"/>
-                <Label Text="Carbs" HorizontalOptions="Center" Margin="5,2" Grid.Row="0" Grid.Column="2"/>
-                <Label Text="Fat" HorizontalOptions="Center" Margin="5,2" Grid.Row="0" Grid.Column="3"/>
-                <Label Text="Protein" HorizontalOptions="Center" Margin="5,2" Grid.Row="0" Grid.Column="4"/>
-                <Label Text="Sodium" HorizontalOptions="Center" Margin="5,2" Grid.Row="0" Grid.Column="5"/>
-                <Label Text="Sugar" HorizontalOptions="Center" Margin="5,2" Grid.Row="0" Grid.Column="6"/>
+                <Label Text="Breakfast" HorizontalOptions="FillAndExpand" Margin="2" Grid.Row="0" Grid.Column="0" BackgroundColor="White"/>
+                <Label Text="Calories" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="1" BackgroundColor="White"/>
+                <Label Text="Carbs" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="2" BackgroundColor="White"/>
+                <Label Text="Fat" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="3" BackgroundColor="White"/>
+                <Label Text="Protein" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="4" BackgroundColor="White"/>
+                <Label Text="Sodium" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="5" BackgroundColor="White"/>
+                <Label Text="Sugar" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="6" BackgroundColor="White"/>
 
-                <ListView x:Name="lvIntakes"
-                  Margin="3, 3, 3, 0"
-                  ItemsSource="{Binding BreakfastIntake, Mode=TwoWay}"
-                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Vertical" Margin="2, 1">
-                                    <Label Text="{Binding Path=Name}" />
-                                    <Label Text="{Binding Path=Calories}" />
-                                    <Label Text="{Binding Path=Carbs}" />
-                                    <Label Text="{Binding Path=Fat}" />
-                                    <Label Text="{Binding Path=Protein}" />
-                                    <Label Text="{Binding Path=Sodium}" />
-                                    <Label Text="{Binding Path=Sugar}" />
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <Grid x:Name="bfastDataGrid"/>
             </Grid>
 
         </Grid>

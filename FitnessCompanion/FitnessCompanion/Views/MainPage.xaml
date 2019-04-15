@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:FitnessCompanion"
              x:Class="FitnessCompanion.MainPage">
 
-    <Grid>
+    <Grid x:Name="contentGrid" Margin="150, 10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

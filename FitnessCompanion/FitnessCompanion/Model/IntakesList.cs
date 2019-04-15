@@ -11,17 +11,21 @@ namespace FitnessCompanion
     public class IntakesList
     {
         #region member attributes
-        public string MealType { get; set; }
-        public List<Intake> Intakes { get; set; }
+        public List<Intake> Breakfast { get; set; }
+        public List<Intake> Lunch { get; set; }
+        public List<Intake> Dinner { get; set; }
+        public List<Intake> Snacks { get; set; }
         #endregion
 
         #region constructors
         public IntakesList() { }
 
-        public IntakesList(string mealType, List<Intake> list)
+        public IntakesList(List<Intake> bfastList, List<Intake> lunchList, List<Intake> dinnerList, List<Intake> snacksList)
         {
-            MealType = mealType;
-            Intakes = list;
+            Breakfast = bfastList;
+            Lunch = lunchList;
+            Dinner = dinnerList;
+            Snacks = snacksList;
         }
         #endregion
         #region public methods

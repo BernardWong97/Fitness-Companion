@@ -11,7 +11,7 @@ namespace FitnessCompanion
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new Tracker());
         }
 
         protected override void OnStart()

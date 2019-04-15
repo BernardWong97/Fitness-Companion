@@ -106,6 +106,7 @@ public class MonoPackageManager {
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "FitnessCompanion.Android.dll" comes first in this list. */
+		"FitnessCompanion.Android.dll",
 		"FitnessCompanion.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
