@@ -21,7 +21,7 @@ namespace FitnessCompanion
         {
             bool success;
             User loggingUser = new User(entUsername.Text, entPassword.Text);
-            GlobalVariable.user = loggingUser;
+            Util.currentUser = loggingUser;
 
             success = (BindingContext as MainPageViewModel).Login(loggingUser);
 

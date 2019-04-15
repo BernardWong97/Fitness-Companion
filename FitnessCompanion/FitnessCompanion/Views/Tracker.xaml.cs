@@ -15,6 +15,7 @@ namespace FitnessCompanion
 		public Tracker ()
 		{
 			InitializeComponent ();
-		}
+            this.BindingContext = new TrackerViewModel(new PageService());
+        }
 	}
 }

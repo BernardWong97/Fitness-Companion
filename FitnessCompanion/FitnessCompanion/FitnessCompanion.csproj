@@ -11,10 +11,12 @@
 
   <ItemGroup>
     <None Remove="Data\credentials.txt" />
+    <None Remove="Data\intakes.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\credentials.txt" />
+    <EmbeddedResource Include="Data\intakes.txt" />
   </ItemGroup>
 
   <ItemGroup>

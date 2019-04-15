@@ -18,20 +18,20 @@ namespace FitnessCompanion
         public MainPageViewModel(IPageService pageService)
         {
             _pageService = pageService;
-            ReadList();
+            ReadUserList();
         }
         #endregion
 
         #region public methods
-        public void ReadList()
+        public void ReadUserList()
         {
             UsersList = User.ReadUserListData();
-        } // ReadList()
+        } // ReadUserList()
 
-        public void SaveList()
+        public void SaveUserList()
         {
             User.SaveUserListData(UsersList);
-        } // SaveList()
+        } // SaveUserList()
 
         public bool Login(User loggingUser)
         {

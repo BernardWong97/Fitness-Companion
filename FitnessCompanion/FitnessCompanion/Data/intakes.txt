@@ -1,0 +1,17 @@
+﻿{
+  "breakfast": [
+  {"Name": "Oatmeal", "Calories": 150, "Carbs": 27, "Fat": 3, "Protein": 5, "Sodium": 0, "Sugar": 1},
+  {"Name": "Milk", "Calories": 36, "Carbs": 3, "Fat": 2, "Protein": 2, "Sodium": 24, "Sugar": 3},
+  {"Name": "Orange juice", "Calories": 14, "Carbs": 3, "Fat": 0, "Protein": 0, "Sodium": 0, "Sugar": 3}
+  ],
+  "lunch": [
+  {"Name": "Salmon", "Calories": 144, "Carbs": 0, "Fat": 12, "Protein": 19, "Sodium": 50, "Sugar": 0},
+  {"Name": "Broccoli", "Calories": 33, "Carbs": 6, "Fat": 0, "Protein": 3, "Sodium": 30, "Sugar": 1},
+  {"Name": "Potatoes", "Calories": 281, "Carbs": 63, "Fat": 0, "Protein": 6, "Sodium": 21, "Sugar": 5},
+  {"Name": "Butter", "Calories": 70, "Carbs": 0, "Fat": 8, "Protein": 0, "Sodium": 60, "Sugar": 0}
+  ],
+  "dinner": [],
+  "snacks": [
+  {"Name": "Apple", "Calories": 90, "Carbs": 22, "Fat": 0, "Protein": 0, "Sodium": 0, "Sugar": 16}
+  ]
+}
