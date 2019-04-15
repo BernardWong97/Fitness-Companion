@@ -23,7 +23,7 @@ namespace FitnessCompanion
         {
             _pageService = pageService;
             ReadIntakeList();
-            BreakfastGrid = DataGrid(BreakfastIntake);
+            BreakfastGrid = DataGrid(BreakfastIntake, "Breakfast");
         }
         #endregion
 
@@ -37,25 +37,27 @@ namespace FitnessCompanion
             SnacksIntake = IntakeList[0].Snacks;
         } // ReadIntakeList()
 
-        public Grid DataGrid(List<Intake> intakeList)
+        public Grid DataGrid(List<Intake> intakeList, string title)
         {
-            Grid dataGrid = new Grid { BackgroundColor = Color.Green, ColumnSpacing = 1, RowSpacing = 1 };
-            int rowNum = 0;
+            Grid dataGrid = new Grid { BackgroundColor = Color.Black, ColumnSpacing = 1, RowSpacing = 1, Padding = 2};
+            int rowNum = 1;
 
-            for(var i = 0; i < BreakfastIntake.Count; i++)
+            for(var i = 0; i <= BreakfastIntake.Count; i++)
             {
-                if (i == 0)
-                    dataGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star)});
-
                 dataGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
-            }
+            } // for
 
             for (var i = 0; i < 7; i++)
             {
-                dataGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
-            }
+                if (i == 0)
+                    dataGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-            foreach(var intake in intakeList)
+                dataGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+            } // for
+
+            SetHeadings(dataGrid, title);
+            
+            foreach (var intake in intakeList)
             {
                 dataGrid.Children.Add(new Label()
                 {
@@ -67,64 +69,97 @@ namespace FitnessCompanion
 
                 dataGrid.Children.Add(new Label()
                 {
-                    Text = intake.Name,
+                    Text = intake.Calories.ToString(),
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     Margin = 2,
                 }, 1, rowNum);
 
                 dataGrid.Children.Add(new Label()
                 {
-                    Text = intake.Calories.ToString(),
+                    Text = intake.Carbs.ToString(),
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     Margin = 2,
                 }, 2, rowNum);
 
                 dataGrid.Children.Add(new Label()
                 {
-                    Text = intake.Carbs.ToString(),
+                    Text = intake.Fat.ToString(),
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     Margin = 2,
                 }, 3, rowNum);
 
                 dataGrid.Children.Add(new Label()
                 {
-                    Text = intake.Fat.ToString(),
+                    Text = intake.Protein.ToString(),
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     Margin = 2,
                 }, 4, rowNum);
 
                 dataGrid.Children.Add(new Label()
                 {
-                    Text = intake.Protein.ToString(),
+                    Text = intake.Sodium.ToString(),
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     Margin = 2,
                 }, 5, rowNum);
 
                 dataGrid.Children.Add(new Label()
                 {
-                    Text = intake.Sodium.ToString(),
+                    Text = intake.Sugar.ToString(),
                     BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     Margin = 2,
                 }, 6, rowNum);
 
-                dataGrid.Children.Add(new Label()
-                {
-                    Text = intake.Sugar.ToString(),
-                    BackgroundColor = Color.White,
-                    HorizontalOptions = LayoutOptions.Center,
-                    Margin = 2,
-                }, 7, rowNum);
-
                 rowNum++;
-            }
+            } // foreach
             return dataGrid;
-        }
+        } // DataGrid()
+
+        public void SetHeadings(Grid dataGrid, string title)
+        {
+            string txt = "";
+            for(var i = 0; i < 7; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        txt = title;
+                        break;
+                    case 1:
+                        txt = "Calories";
+                        break;
+                    case 2:
+                        txt = "Carbs";
+                        break;
+                    case 3:
+                        txt = "Fat";
+                        break;
+                    case 4:
+                        txt = "Protein";
+                        break;
+                    case 5:
+                        txt = "Sodium";
+                        break;
+                    case 6:
+                        txt = "Sugar";
+                        break;
+                } // switch
+
+                Label label = new Label
+                {
+                    Text = txt,
+                    BackgroundColor = Color.White,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+                };
+
+                dataGrid.Children.Add(label, i, 0);
+            } // for
+        } // SetHeadings()
         #endregion
     } // class
 } // namespace

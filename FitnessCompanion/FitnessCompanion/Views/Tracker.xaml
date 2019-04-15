@@ -13,31 +13,7 @@
             <Label Text="Nutrient Intake Tracker" HorizontalOptions="Center"
                Margin="0,10" Grid.Row="0"/>
 
-            <Grid x:Name="breakfastGrid" Grid.Row="1" BackgroundColor="Black" ColumnSpacing="1" RowSpacing="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <Label Text="Breakfast" HorizontalOptions="FillAndExpand" Margin="2" Grid.Row="0" Grid.Column="0" BackgroundColor="White"/>
-                <Label Text="Calories" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="1" BackgroundColor="White"/>
-                <Label Text="Carbs" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="2" BackgroundColor="White"/>
-                <Label Text="Fat" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="3" BackgroundColor="White"/>
-                <Label Text="Protein" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="4" BackgroundColor="White"/>
-                <Label Text="Sodium" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="5" BackgroundColor="White"/>
-                <Label Text="Sugar" HorizontalOptions="Center" Margin="2" Grid.Row="0" Grid.Column="6" BackgroundColor="White"/>
-
-                <Grid x:Name="bfastDataGrid"/>
+            <Grid x:Name="breakfastGrid">
             </Grid>
 
         </Grid>
