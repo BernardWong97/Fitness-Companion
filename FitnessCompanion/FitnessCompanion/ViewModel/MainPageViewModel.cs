@@ -51,10 +51,19 @@ namespace FitnessCompanion
             return success;
         } // Login()
 
-        public async Task Register()
+        public async Task RegisterPage(bool push)
         {
-            await _pageService.PushAsync(new RegisterPage());
-        }
+            if (push)
+                await _pageService.PushAsync(new RegisterPage());
+            else
+                await _pageService.PopAsync();
+        } // RegisterPage()
+
+        public string Register(User registerUser)
+        {
+
+            return null;
+        } // Register()
         #endregion
     } // class
 } // namespace

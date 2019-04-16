@@ -18,9 +18,14 @@ namespace FitnessCompanion
             await Application.Current.MainPage.Navigation.PushAsync(page);
         } // PushAsync
 
+        public async Task PopAsync()
+        {
+            await Application.Current.MainPage.Navigation.PopAsync();
+        } // PushAsync
+
         public void ChangeMainPage(Page page)
         {
             Application.Current.MainPage = page;
-        }
+        } // ChangeMainPage
     } // class
 } // namespace

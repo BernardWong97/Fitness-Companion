@@ -11,7 +11,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Text="Fitness Companion Application" HorizontalOptions="Center"
+        <Label Text="Registration" HorizontalOptions="Center"
                Margin="0,10" Grid.Row="0"/>
 
         <StackLayout Orientation="Vertical" 
@@ -22,12 +22,30 @@
             <Entry x:Name="entUsername" Text=""/>
             <Label Text="Password"/>
             <Entry x:Name="entPassword" IsPassword="True"/>
+            <Label Text="Retype Password"/>
+            <Entry x:Name="entRePassword" IsPassword="True"/>
+            <Label x:Name="errorLabel" TextColor="Red"/>
+            <StackLayout x:Name="slHeight" Orientation="Horizontal">
+                <Label Text="Height (m): "/>
+                <Picker x:Name="pckHM">
+                    <Picker.Items>
+                        <x:String>0</x:String>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                </Picker>
+                <Picker x:Name="pckHCM"/>
+            </StackLayout>
+            <StackLayout x:Name="slWeight" Orientation="Horizontal">
+                <Label Text="Weight (kg): "/>
+                <Picker x:Name="pckWKG"/>
+            </StackLayout>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
-            <Button x:Name="btnLogin" Text="Login" Margin="2"/>
-            <Button x:Name="btnRegister" Text="Register" Margin="2"/>
-            <Label x:Name="test"/>
+            <Button x:Name="btnRegister" Text="Register" Margin="2" Clicked="BtnRegister_Clicked"/>
+            <Button x:Name="btnBack" Text="Back" Margin="2" Clicked="BtnBack_Clicked"/>
         </StackLayout>
 
     </Grid>

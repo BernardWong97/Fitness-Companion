@@ -26,6 +26,20 @@ namespace FitnessCompanion
         #region constructors
         public User(){ }
 
+        public User(string uname, string pw)
+        {
+            Username = uname;
+            Password = pw;
+            Height = 0;
+            Weight = 0;
+            DailyCalories = 0;
+            DailyCarbs = 0;
+            DailyFat = 0;
+            DailyProtein = 0;
+            DailySodium = 0;
+            DailySugar = 0;
+        }
+
         public User(string uname, string pw, int h, int w, int cal, int carbs, int fat, int protein, int sod, int sugar)
         {
             Username = uname;

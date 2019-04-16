@@ -33,7 +33,7 @@ namespace FitnessCompanion
 
         private async void BtnRegister_Clicked(object sender, EventArgs e)
         {
-            await (BindingContext as MainPageViewModel).Register();
+            await (BindingContext as MainPageViewModel).RegisterPage(true);
         } // BtnRegister_Clicked()
         #endregion
     } // class
