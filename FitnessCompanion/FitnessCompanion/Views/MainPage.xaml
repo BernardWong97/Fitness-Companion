@@ -23,12 +23,12 @@
             <Entry x:Name="entUsername" Text=""/>
             <Label Text="Password"/>
             <Entry x:Name="entPassword" IsPassword="True" Completed="BtnLogin_Clicked"/>
+            <Label x:Name="errorLabel" TextColor="Red" FontAttributes="Bold"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
             <Button x:Name="btnLogin" Text="Login" Margin="2" Clicked="BtnLogin_Clicked"/>
             <Button x:Name="btnRegister" Text="Register" Margin="2" Clicked="BtnRegister_Clicked"/>
-            <Label x:Name="test"/>
         </StackLayout>
         
     </Grid>

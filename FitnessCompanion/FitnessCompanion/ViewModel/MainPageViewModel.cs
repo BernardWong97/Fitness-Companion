@@ -43,6 +43,7 @@ namespace FitnessCompanion
 
                 if (success)
                 {
+                    Util.currentUser = u;
                     _pageService.ChangeMainPage(new CaloriesTracker());
                     break;
                 }

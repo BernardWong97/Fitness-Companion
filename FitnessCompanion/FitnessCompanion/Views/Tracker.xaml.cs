@@ -18,6 +18,7 @@ namespace FitnessCompanion
             this.BindingContext = new TrackerViewModel(new PageService());
             SetDataGrids();
             SetDailyGrid();
+            SetUserGoal();
         }
 
         public void SetDataGrids()
@@ -81,5 +82,46 @@ namespace FitnessCompanion
                 dailyGrid.Children.Add(label, i+1, 0);
             } // for
         } // SetDailyGrid()
-	} // class
+
+        public void SetUserGoal()
+        {
+            User currentUser = Util.currentUser;
+            string txt = "0";
+
+            for (var i = 0; i < 6; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        txt = currentUser.DailyCalories.ToString();
+                        break;
+                    case 1:
+                        txt = currentUser.DailyCarbs.ToString();
+                        break;
+                    case 2:
+                        txt = currentUser.DailyFat.ToString();
+                        break;
+                    case 3:
+                        txt = currentUser.DailyProtein.ToString();
+                        break;
+                    case 4:
+                        txt = currentUser.DailySodium.ToString();
+                        break;
+                    case 5:
+                        txt = currentUser.DailySugar.ToString();
+                        break;
+                } // switch
+
+                Label label = new Label
+                {
+                    Text = txt,
+                    BackgroundColor = Color.LightGray,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                };
+
+                dailyGrid.Children.Add(label, i + 1, 1);
+            } // for
+        } // SetUserGoal()
+    } // class
 } // namespace

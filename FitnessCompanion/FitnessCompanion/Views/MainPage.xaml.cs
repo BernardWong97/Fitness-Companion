@@ -21,14 +21,12 @@ namespace FitnessCompanion
         {
             bool success;
             User loggingUser = new User(entUsername.Text, entPassword.Text);
-            Util.currentUser = loggingUser;
 
             success = (BindingContext as MainPageViewModel).Login(loggingUser);
 
-            if (success)
-                test.Text = "logged in";
-            else
-                test.Text = "failed";
+            if (!success)
+                errorLabel.Text = "Username/Password incorrect";
+                
         } // BtnLogin_Clicked()
 
         private async void BtnRegister_Clicked(object sender, EventArgs e)
