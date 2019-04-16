@@ -309,6 +309,46 @@ namespace FitnessCompanion
 
             return "Fail to get KeyValue";
         } // CalcDaily()
+
+        public string CalcRemaining(string nutrientType)
+        {
+            int remaining = 0;
+
+            switch (nutrientType)
+            {
+                case "Calories":
+                    remaining = Util.currentUser.DailyCalories;
+                    break;
+                case "Carbs":
+                    remaining = Util.currentUser.DailyCarbs;
+                    break;
+                case "Fat":
+                    remaining = Util.currentUser.DailyFat;
+                    break;
+                case "Protein":
+                    remaining = Util.currentUser.DailyProtein;
+                    break;
+                case "Sodium":
+                    remaining = Util.currentUser.DailySodium;
+                    break;
+                case "Sugar":
+                    remaining = Util.currentUser.DailySugar;
+                    break;
+            } // switch
+
+            foreach(var kv in dailyTotals)
+            {
+                if(kv.Key == nutrientType)
+                {
+                    remaining -= kv.Value;
+                } // if
+            } // foreach
+
+            if (remaining < 0)
+                return "0";
+
+            return remaining.ToString();
+        } // CalcRemaining()
         #endregion
     } // class
 } // namespace

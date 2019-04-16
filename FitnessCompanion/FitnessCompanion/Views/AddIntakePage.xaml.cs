@@ -14,13 +14,13 @@ namespace FitnessCompanion
 	{
         public List<Intake> IntakeList;
 
-		public AddIntakePage (List<Intake> intakeList)
-		{
-			InitializeComponent ();
+        public AddIntakePage(List<Intake> intakeList)
+        {
+            InitializeComponent();
             IntakeList = intakeList;
 
             foreach (var i in IntakeList)
                 System.Diagnostics.Debug.WriteLine(i.Name);
-		}
-	}
+        }
+    }
 }

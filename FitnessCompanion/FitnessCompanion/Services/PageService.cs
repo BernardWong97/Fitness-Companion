@@ -25,7 +25,7 @@ namespace FitnessCompanion
 
         public void ChangeMainPage(Page page)
         {
-            Application.Current.MainPage = page;
+            Application.Current.MainPage = new NavigationPage(page);
         } // ChangeMainPage
     } // class
 } // namespace

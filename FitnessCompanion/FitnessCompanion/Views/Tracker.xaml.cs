@@ -19,6 +19,7 @@ namespace FitnessCompanion
             SetDataGrids();
             SetDailyGrid();
             SetUserGoal();
+            SetRemaining();
         }
 
         public void SetDataGrids()
@@ -123,5 +124,48 @@ namespace FitnessCompanion
                 dailyGrid.Children.Add(label, i + 1, 1);
             } // for
         } // SetUserGoal()
+
+        public void SetRemaining()
+        {
+            string txt;
+            string nutrientType = "";
+            for (var i = 0; i < 6; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        nutrientType = "Calories";
+                        break;
+                    case 1:
+                        nutrientType = "Carbs";
+                        break;
+                    case 2:
+                        nutrientType = "Fat";
+                        break;
+                    case 3:
+                        nutrientType = "Protein";
+                        break;
+                    case 4:
+                        nutrientType = "Sodium";
+                        break;
+                    case 5:
+                        nutrientType = "Sugar";
+                        break;
+                } // switch
+
+                txt = (BindingContext as TrackerViewModel).CalcRemaining(nutrientType);
+
+                Label label = new Label
+                {
+                    Text = txt,
+                    BackgroundColor = Color.LightGray,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    TextColor = Color.Green,
+                };
+
+                dailyGrid.Children.Add(label, i + 1, 2);
+            } // for
+        } // SetRemaining()
     } // class
 } // namespace
