@@ -13,15 +13,31 @@ namespace FitnessCompanion
         #region member attributes
         public string Username { get; set; }
         public string Password { get; set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
+        public int DailyCalories { get; set; }
+        public int DailyCarbs { get; set; }
+        public int DailyFat { get; set; }
+        public int DailyProtein { get; set; }
+        public int DailySodium { get; set; }
+        public int DailySugar { get; set; }
         #endregion
 
         #region constructors
         public User(){ }
 
-        public User(string uname, string pw)
+        public User(string uname, string pw, int h, int w, int cal, int carbs, int fat, int protein, int sod, int sugar)
         {
             Username = uname;
             Password = pw;
+            Height = h;
+            Weight = w;
+            DailyCalories = cal;
+            DailyCarbs = carbs;
+            DailyFat = fat;
+            DailyProtein = protein;
+            DailySodium = sod;
+            DailySugar = sugar;
         }
         #endregion
 

@@ -11,6 +11,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Label Text="Nutrient Intake Tracker" HorizontalOptions="Center"
@@ -23,6 +24,35 @@
             <Grid x:Name="dinnerGrid"/>
 
             <Grid x:Name="snacksGrid"/>
+
+            <Grid x:Name="dailyGrid" ColumnSpacing = "1" RowSpacing = "1" Padding = "2" Grid.Row="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text = "Daily Totals" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>
+                <Label Text = "Daily Goal" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="1" Grid.Column="0" TextColor="Blue"/>
+                <Label Text = "Remaining" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="2" Grid.Column="0" TextColor="Blue"/>
+                
+                <Label Text = "Calories" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="1" TextColor="White"/>
+                <Label Text = "Carbs" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="2" TextColor="White"/>
+                <Label Text = "Fat" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="3" TextColor="White"/>
+                <Label Text = "Protein" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="4" TextColor="White"/>
+                <Label Text = "Sodium" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="5" TextColor="White"/>
+                <Label Text = "Sugar" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="6" TextColor="White"/>
+            </Grid>
 
         </Grid>
     </ContentPage.Content>

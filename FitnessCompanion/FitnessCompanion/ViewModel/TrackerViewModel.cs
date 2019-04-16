@@ -19,6 +19,7 @@ namespace FitnessCompanion
         public Grid LunchGrid;
         public Grid DinnerGrid;
         public Grid SnacksGrid;
+        public IDictionary<string, int> dailyTotals = new Dictionary<string, int>();
         private readonly IPageService _pageService;
         #endregion
 
@@ -27,6 +28,12 @@ namespace FitnessCompanion
         {
             _pageService = pageService;
             ReadIntakeList();
+            dailyTotals.Add("Calories", 0);
+            dailyTotals.Add("Carbs", 0);
+            dailyTotals.Add("Fat", 0);
+            dailyTotals.Add("Protein", 0);
+            dailyTotals.Add("Sodium", 0);
+            dailyTotals.Add("Sugar", 0);
             BreakfastGrid = DataGrid(BreakfastIntake, "Breakfast");
             LunchGrid = DataGrid(LunchIntake, "Lunch");
             DinnerGrid = DataGrid(DinnerIntake, "Dinner");
@@ -71,6 +78,7 @@ namespace FitnessCompanion
                     Text = intake.Name,
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Start,
                 }, 0, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -78,6 +86,7 @@ namespace FitnessCompanion
                     Text = intake.Calories.ToString(),
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                 }, 1, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -85,6 +94,7 @@ namespace FitnessCompanion
                     Text = intake.Carbs.ToString(),
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                 }, 2, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -92,6 +102,7 @@ namespace FitnessCompanion
                     Text = intake.Fat.ToString(),
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                 }, 3, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -99,6 +110,7 @@ namespace FitnessCompanion
                     Text = intake.Protein.ToString(),
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                 }, 4, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -106,6 +118,7 @@ namespace FitnessCompanion
                     Text = intake.Sodium.ToString(),
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                 }, 5, rowNum);
 
                 dataGrid.Children.Add(new Label()
@@ -113,6 +126,7 @@ namespace FitnessCompanion
                     Text = intake.Sugar.ToString(),
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                 }, 6, rowNum);
 
                 rowNum++;
@@ -172,6 +186,7 @@ namespace FitnessCompanion
                     Text = txt,
                     BackgroundColor = Color.Blue,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalTextAlignment = TextAlignment.Center,
                     TextColor = Color.White
                 };
 
@@ -181,6 +196,7 @@ namespace FitnessCompanion
                     label.TextColor = Color.Blue;
                     label.FontSize = 25;
                     label.FontAttributes = FontAttributes.Bold;
+                    label.HorizontalTextAlignment = TextAlignment.Start;
                 } // if
                     
 
@@ -224,8 +240,15 @@ namespace FitnessCompanion
                     Text = txt,
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    TextColor = Color.Blue
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    TextColor = Color.Blue,
                 };
+
+                if(i == 0)
+                {
+                    label.BackgroundColor = Color.White;
+                    label.HorizontalTextAlignment = TextAlignment.End;
+                }
 
                 dataGrid.Children.Add(label, i, rowNum);
             } // for
@@ -260,8 +283,32 @@ namespace FitnessCompanion
                 } // switch
             } // foreach
 
+            int value = 0;
+
+            foreach(var kv in dailyTotals)
+            {
+                if (kv.Key == nutrientType)
+                {
+                    value = kv.Value + total;
+                } // if  
+            } // foreach
+
+            dailyTotals.Remove(nutrientType);
+            dailyTotals.Add(nutrientType, value);
+
             return total.ToString();
-        } // CalcTotals
+        } // CalcTotals()
+
+        public string CalcDaily(string nutrientType)
+        {
+            foreach(var kv in dailyTotals)
+            {
+                if (kv.Key == nutrientType)
+                    return kv.Value.ToString();
+            } // foreach
+
+            return "Fail to get KeyValue";
+        } // CalcDaily()
         #endregion
     } // class
 } // namespace
