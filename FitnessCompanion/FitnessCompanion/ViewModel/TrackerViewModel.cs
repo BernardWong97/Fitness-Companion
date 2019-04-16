@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FitnessCompanion
 {
-    public class TrackerViewModel: BaseViewModel
+    public class TrackerViewModel
     {    
         #region member attributes
         public ObservableCollection<IntakesList> IntakeList { get; private set; } = new ObservableCollection<IntakesList>();
@@ -48,7 +49,7 @@ namespace FitnessCompanion
             Grid dataGrid = new Grid { ColumnSpacing = 1, RowSpacing = 1, Padding = 2};
             int rowNum = 1;
 
-            for(var i = 0; i < intakeList.Count + 2; i++)
+            for(var i = 0; i < intakeList.Count + 3; i++)
             {
                 dataGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
             } // for
@@ -118,6 +119,20 @@ namespace FitnessCompanion
             } // foreach
 
             SetFootings(dataGrid, intakeList, rowNum);
+
+            Button addButton = new Button()
+            {
+                Text = "Add Intake",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                CornerRadius = 7,
+                BackgroundColor = Color.Cyan,
+            };
+            addButton.Clicked += async (s, e) =>
+            {
+                await _pageService.PushAsync(new AddIntakePage(intakeList));
+            };
+
+            dataGrid.Children.Add(addButton, 0, rowNum + 1);
 
             return dataGrid;
         } // DataGrid()

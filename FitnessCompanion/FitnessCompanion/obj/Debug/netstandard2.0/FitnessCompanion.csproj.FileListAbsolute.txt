@@ -13,3 +13,4 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstand
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\CaloriesTracker.xaml.g.cs
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\Tracker.xaml.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\AddIntakePage.xaml.g.cs

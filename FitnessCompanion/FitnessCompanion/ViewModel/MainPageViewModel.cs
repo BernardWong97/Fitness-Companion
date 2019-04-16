@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FitnessCompanion
 {
-    class MainPageViewModel : BaseViewModel
+    class MainPageViewModel
     {
         #region member attributes
         public ObservableCollection<User> UsersList { get; private set; } = new ObservableCollection<User>();
