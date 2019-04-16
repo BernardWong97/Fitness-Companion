@@ -59,10 +59,17 @@ namespace FitnessCompanion
                 await _pageService.PopAsync();
         } // RegisterPage()
 
-        public string Register(User registerUser)
+        public bool Register(User registerUser)
         {
-
-            return null;
+            foreach(User u in UsersList)
+            {
+                if (u.Username == registerUser.Username)
+                    return false;
+            } // foreach
+            
+            UsersList.Add(registerUser);
+            SaveUserList();
+            return true;
         } // Register()
         #endregion
     } // class

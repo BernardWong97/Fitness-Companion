@@ -48,12 +48,31 @@ namespace FitnessCompanion
             await (BindingContext as MainPageViewModel).RegisterPage(false);
         } // BtnBack_Clicked()
 
-        private void BtnRegister_Clicked(object sender, EventArgs e)
+        private async void BtnRegister_Clicked(object sender, EventArgs e)
         {
-            ValidateInputs();
+            if (ValidateInputs())
+            {
+                int height = (Convert.ToInt32(pckHM.SelectedItem) * 100) + Convert.ToInt32(pckHCM.SelectedItem);
+                int weight = (Convert.ToInt32(pckWKG.SelectedItem));
+                registerUser = new User(entUsername.Text, entPassword.Text, height, weight);
+                bool successReg = (BindingContext as MainPageViewModel).Register(registerUser);
+
+                if (!successReg)
+                {
+                    errorLabel.Text = "Username has been taken.";
+                }
+                else
+                {
+                    errorLabel.Text = "Register successful, auto logging in.";
+                    errorLabel.TextColor = Color.Green;
+                    await Task.Delay(2000);
+                    Util.currentUser = registerUser;
+                    (BindingContext as MainPageViewModel).Login(registerUser);
+                }
+            } // if
         } // BtnRegister_Clicked()
 
-        private void ValidateInputs()
+        private bool ValidateInputs()
         {
             string password = entPassword.Text;
             string retypePw = entRePassword.Text;
@@ -61,11 +80,21 @@ namespace FitnessCompanion
 
             
             if (username == "" || password == "" || retypePw == "")
+            {
                 errorLabel.Text = "Please enter all fields.";
+                return false;
+            }
             else if (password != retypePw)
+            {
                 errorLabel.Text = "Passwords do not match.";
+                return false;
+            }   
             else
+            {
                 errorLabel.Text = "";
+            }  
+
+            return true;
         } // BtnRegister_Clicked()
     } // class
 } // namespace

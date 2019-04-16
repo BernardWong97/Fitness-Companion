@@ -40,18 +40,18 @@ namespace FitnessCompanion
             DailySugar = 0;
         }
 
-        public User(string uname, string pw, int h, int w, int cal, int carbs, int fat, int protein, int sod, int sugar)
+        public User(string uname, string pw, int h, int w)
         {
             Username = uname;
             Password = pw;
             Height = h;
             Weight = w;
-            DailyCalories = cal;
-            DailyCarbs = carbs;
-            DailyFat = fat;
-            DailyProtein = protein;
-            DailySodium = sod;
-            DailySugar = sugar;
+            DailyCalories = 0;
+            DailyCarbs = 0;
+            DailyFat = 0;
+            DailyProtein = 0;
+            DailySodium = 0;
+            DailySugar = 0;
         }
         #endregion
 
@@ -66,6 +66,7 @@ namespace FitnessCompanion
                 string path = Environment.GetFolderPath(
                                 Environment.SpecialFolder.LocalApplicationData);
                 string filename = Path.Combine(path, Util.CREDENTIAL_FILE);
+                System.Diagnostics.Debug.WriteLine(filename);
                 using (var reader = new StreamReader(filename))
                 {
                     jsonText = reader.ReadToEnd();
