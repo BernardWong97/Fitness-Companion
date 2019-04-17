@@ -104,7 +104,7 @@ namespace FitnessCompanion
             string retypePw = entRePassword.Text;
             string username = entUsername.Text;
 
-            if (username == "" || password == "" || retypePw == "")
+            if (username == null || password == null || retypePw == null)
             {
                 errorLabel.Text = "Please enter all fields.";
                 return false;
