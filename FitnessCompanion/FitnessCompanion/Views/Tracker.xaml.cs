@@ -15,6 +15,11 @@ namespace FitnessCompanion
 		public Tracker ()
 		{
 			InitializeComponent ();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             this.BindingContext = new TrackerViewModel(new PageService());
             SetDataGrids();
             SetDailyGrid();

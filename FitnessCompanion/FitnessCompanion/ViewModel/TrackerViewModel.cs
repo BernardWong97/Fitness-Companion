@@ -70,7 +70,7 @@ namespace FitnessCompanion
             } // switch
 
             IntakesList.SaveIntakeListData(IntakeList);
-            _pageService.ChangeMainPage(new NavigationPage(new CaloriesTracker()));
+            _pageService.PopAsync();
         } // UpdateIntakeList()
 
         public Grid DataGrid(List<Intake> intakeList, string title)
