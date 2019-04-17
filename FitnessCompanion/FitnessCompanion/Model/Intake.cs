@@ -10,7 +10,7 @@ namespace FitnessCompanion
 {
     public class Intake
     {
-        #region member attributes
+        #region Member Attributes
         public string Name { get; set; }
         public int Calories { get; set; }
         public int Carbs { get; set; }
@@ -20,7 +20,7 @@ namespace FitnessCompanion
         public int Sugar { get; set; }
         #endregion
 
-        #region constructors
+        #region Constructors
         public Intake() { }
 
         public Intake(string iName, int iCal, int iCarbs, int iFat, int iProtein, int iSodium, int iSugar)
