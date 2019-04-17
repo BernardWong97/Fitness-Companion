@@ -14,35 +14,68 @@
             <Label Text="Account" HorizontalOptions="Center"
                Margin="0,10" Grid.Row="0"/>
 
-            <StackLayout Orientation="Vertical" 
-                     VerticalOptions="FillAndExpand"
-                     HorizontalOptions="FillAndExpand"
-                     Spacing="10" Grid.Row="1"
-                         BindingContext="{Binding CurrentUser}">
-                <Label Text="Username"/>
-                <Label Text="{Binding Username}"/>
-                <Label Text="Password"/>
-                <Entry x:Name="entPw" Text="{Binding Password}" IsPassword="True"/>
-                <Label Text="Height"/>
-                <Entry x:Name="entH" Text="{Binding Height}"/>
-                <Label Text="Weight"/>
-                <Entry x:Name="entWeight" Text="{Binding Weight}"/>
-                <Label Text="Daily Calories Goal"/>
-                <Entry x:Name="entCal" Text="{Binding DailyCalories}"/>
-                <Label Text="Daily Carbs Goal"/>
-                <Entry x:Name="entCarbs" Text="{Binding DailyCarbs}"/>
-                <Label Text="Daily Fat Goal"/>
-                <Entry x:Name="entFat" Text="{Binding DailyFat}"/>
-                <Label Text="Daily Protein Goal"/>
-                <Entry x:Name="entProtein" Text="{Binding DailyProtein}"/>
-                <Label Text="Daily Sodium Goal"/>
-                <Entry x:Name="entSodium" Text="{Binding DailySodium}"/>
-                <Label Text="Daily Sugar Goal"/>
-                <Entry x:Name="entSugar" Text="{Binding DailySugar}"/>
-                <Label x:Name="errorLabel" TextColor="Red"/>
-            </StackLayout>
+            <Grid x:Name="infoGrid" HorizontalOptions="Center" Grid.Row="1" BindingContext="{Binding CurrentUser}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
+                <StackLayout HorizontalOptions="CenterAndExpand"  Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label Text="{Binding Username}" TextColor="Blue" FontAttributes="Bold" FontSize="30"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                    <Label Text="Height: "/>
+                    <Entry x:Name="entH" Text="{Binding Height}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                    <Label Text="Weight:"/>
+                    <Entry x:Name="entWeight" Text="{Binding Weight}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                    <Label Text="Daily Calories Goal:"/>
+                    <Entry x:Name="entCal" Text="{Binding DailyCalories}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                    <Label Text="Daily Carbs Goal:"/>
+                    <Entry x:Name="entCarbs" Text="{Binding DailyCarbs}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+                    <Label Text="Daily Fat Goal:"/>
+                    <Entry x:Name="entFat" Text="{Binding DailyFat}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                    <Label Text="Daily Protein Goal:"/>
+                    <Entry x:Name="entProtein" Text="{Binding DailyProtein}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
+                    <Label Text="Daily Sodium Goal:"/>
+                    <Entry x:Name="entSodium" Text="{Binding DailySodium}"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+                    <Label Text="Daily Sugar Goal:"/>
+                    <Entry x:Name="entSugar" Text="{Binding DailySugar}"/>
+                </StackLayout>
+
+                <Label x:Name="errorLabel" HorizontalOptions="FillAndExpand" TextColor="Red" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2" HorizontalOptions="Center">
                 <Button x:Name="btnSave" Text="Save" Margin="2" Clicked="BtnSave_Clicked"/>
             </StackLayout>
         </Grid>
