@@ -1,12 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FitnessCompanion.AboutPage">
+             x:Class="FitnessCompanion.AboutPage"
+             Title="About">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:Name="contentGrid" Margin="150, 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="About" HorizontalOptions="Center" Grid.Row="0"/>
+
+            <StackLayout HorizontalOptions="StartAndExpand" Grid.Row="1" Margin="2">
+                <Label Text="Description"/>
+                <Label x:Name="lblDesc" BackgroundColor="LightGray" Margin="1"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="StartAndExpand" Grid.Row="2" Margin="2">
+                <Label Text="Pages"/>
+                <Label x:Name="lblPage1" BackgroundColor="LightGray" Margin="1"/>
+                <Label x:Name="lblPage2" BackgroundColor="LightGray" Margin="1"/>
+                <Label x:Name="lblPage3" BackgroundColor="LightGray" Margin="1"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="StartAndExpand" Grid.Row="3" Margin="2">
+                <Label Text="Contact"/>
+                <Label Text="Author: Bernard Wong" BackgroundColor="LightGray" Margin="1"/>
+                <Label Text="Email: G00341962@gmit.ie" BackgroundColor="LightGray" Margin="1"/>
+                <Label Text="Github: https://github.com/BernardWong97" BackgroundColor="LightGray" Margin="1"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
