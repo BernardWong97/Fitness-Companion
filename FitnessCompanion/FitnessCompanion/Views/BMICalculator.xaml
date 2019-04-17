@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessCompanion.BMICalculator"
+             Title="BMI">
+    <ContentPage.Content>
+        <Grid x:Name="contentGrid" Margin="150, 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="BMI Calculator" HorizontalOptions="Center" Grid.Row="0"/>
+            
+            <StackLayout HorizontalOptions="Center" Grid.Row="1">
+                <StackLayout Orientation="Horizontal" Margin="3">
+                    <Label Text="Height (cm): "/>
+                    <Entry x:Name="entH"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="3">
+                    <Label Text="Weight (Kg): "/>
+                    <Entry x:Name="entWeight"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="0,2" Grid.Row="2">
+                <Button x:Name="btnCalculate" Text="Calculate" HorizontalOptions="Center" Clicked="BtnCalculate_Clicked"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="BMI is: " Margin="3"/>
+                    <Label x:Name="labelAns" Margin="3" TextColor="Blue"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

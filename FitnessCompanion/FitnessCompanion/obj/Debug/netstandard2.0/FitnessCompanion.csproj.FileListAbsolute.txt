@@ -15,3 +15,4 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstand
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\Tracker.xaml.g.cs
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\AddIntakePage.xaml.g.cs
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\AccountPage.xaml.g.cs
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\obj\Debug\netstandard2.0\Views\BMICalculator.xaml.g.cs
