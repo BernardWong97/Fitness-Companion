@@ -95,6 +95,6 @@ namespace FitnessCompanion
             }  
 
             return true;
-        } // BtnRegister_Clicked()
+        } // ValidateInputs()
     } // class
 } // namespace
