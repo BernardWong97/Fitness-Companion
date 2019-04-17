@@ -79,6 +79,10 @@ About Page
 
 There are still [issues](https://github.com/BernardWong97/Fitness-Companion/issues) on the application.
 
+## Notes
+- Uses MVVM architectural pattern.
+- INotifyPropertyChanged implements on User object.
+
 ## Researches
 
 These are the references/researches to help build the program:
