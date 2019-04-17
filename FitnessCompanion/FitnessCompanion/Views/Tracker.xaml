@@ -14,7 +14,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label Text="Nutrient Intake Tracker" HorizontalOptions="Center"
+            <Label Text="Nutrition Intake Tracker" HorizontalOptions="Center"
                Margin="0,10" Grid.Row="0"/>
 
             <Grid x:Name="breakfastGrid"/>

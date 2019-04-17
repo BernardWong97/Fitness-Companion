@@ -5,6 +5,6 @@
              x:Class="FitnessCompanion.CaloriesTracker">
   <!--Pages can be added as references or inline-->
     <views:Tracker/>
-    <ContentPage Title="Tab 2" />
+    <views:AccountPage/>
     <ContentPage Title="Tab 3" />
 </TabbedPage>

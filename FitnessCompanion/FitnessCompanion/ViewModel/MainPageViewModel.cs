@@ -7,17 +7,26 @@ using System.Threading.Tasks;
 
 namespace FitnessCompanion
 {
-    class MainPageViewModel
+    class MainPageViewModel : BaseViewModel
     {
         #region member attributes
+        public event PropertyChangedEventHandler PropertyChanged;
+        private User currentUser;
         public ObservableCollection<User> UsersList { get; private set; } = new ObservableCollection<User>();
         private readonly IPageService _pageService;
+
+        public User CurrentUser
+        {
+            get { return currentUser; }
+            set { SetValue(ref currentUser, value); }
+        }
         #endregion
 
         #region constructors
         public MainPageViewModel(IPageService pageService)
         {
             _pageService = pageService;
+            currentUser = Util.currentUser;
             ReadUserList();
         }
         #endregion
@@ -30,6 +39,16 @@ namespace FitnessCompanion
 
         public void SaveUserList()
         {
+            int index = 0;
+            foreach(var u in UsersList)
+            {
+                if (u.Username == currentUser.Username)
+                    break;
+
+                index++;
+            }
+            UsersList.RemoveAt(index);
+            UsersList.Add(currentUser);
             User.SaveUserListData(UsersList);
         } // SaveUserList()
 
