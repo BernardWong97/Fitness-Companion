@@ -82,6 +82,7 @@ There are still [issues](https://github.com/BernardWong97/Fitness-Companion/issu
 ## Notes
 - Uses MVVM architectural pattern.
 - INotifyPropertyChanged implements on User object.
+- Folder contains Design Document and Testing Documents which including Test Draft Plan, etc.
 
 ## Researches
 
