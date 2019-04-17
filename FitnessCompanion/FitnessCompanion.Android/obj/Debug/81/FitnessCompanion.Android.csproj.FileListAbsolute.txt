@@ -105,6 +105,6 @@ D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.dll
-D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\bin\Debug\FitnessCompanion.dll.mdb
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\res\drawable\deleteicon.png
+D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\res\drawable\logo.png
 D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.Android\obj\Debug\81\linksrc\FitnessCompanion.dll.mdb

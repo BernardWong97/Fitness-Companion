@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Users\ASUS\Desktop\logo.png</Source>
+    <SmallTileSource>C:\Users\ASUS\Desktop\logo.png</SmallTileSource>
+    <MediumTileSource>C:\Users\ASUS\Desktop\logo.png</MediumTileSource>
+    <WideTileSource>C:\Users\ASUS\Desktop\logo.png</WideTileSource>
+    <LargeTileSource>C:\Users\ASUS\Desktop\logo.png</LargeTileSource>
+    <AppIconSource>C:\Users\ASUS\Desktop\logo.png</AppIconSource>
+    <SplashScreenSource>C:\Users\ASUS\Desktop\logo.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\ASUS\Desktop\logo.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>
