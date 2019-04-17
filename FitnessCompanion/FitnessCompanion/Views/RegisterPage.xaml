@@ -29,55 +29,57 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <Grid x:Name="contentPage" Margin="150, 10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <ScrollView>
+            <Grid x:Name="contentPage" Margin="10, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Label Text="Registration" Grid.Row="0" Style="{StaticResource TitleStyle}"/>
+                <Label Text="Registration" Grid.Row="0" Style="{StaticResource TitleStyle}"/>
 
-            <!-- User registration inputs-->
-            <StackLayout Orientation="Vertical" 
+                <!-- User registration inputs-->
+                <StackLayout Orientation="Vertical" 
                          VerticalOptions="FillAndExpand"
                          HorizontalOptions="FillAndExpand"
                          Spacing="15" Grid.Row="1">
-                <Label Text="Username" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entUsername" Placeholder="username"/>
-                <Label Text="Password" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entPassword" IsPassword="True" Placeholder="password"/>
-                <Label Text="Retype Password" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entRePassword" IsPassword="True" Placeholder="retype password"/>
-                <Label x:Name="errorLabel" Style="{StaticResource ErrorStyle}"/>
-                
-                <!-- Picker for Height -->
-                <StackLayout x:Name="slHeight" Orientation="Horizontal">
-                    <Label Text="Height (m): " Style="{StaticResource HeadingStyle}"/>
-                    <Picker x:Name="pckHM">
-                        <Picker.Items>
-                            <x:String>0</x:String>
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                        </Picker.Items>
-                        <Picker.SelectedIndex>1</Picker.SelectedIndex>
-                    </Picker>
-                    <Picker x:Name="pckHCM"/>
+                    <Label Text="Username" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entUsername" Placeholder="username"/>
+                    <Label Text="Password" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entPassword" IsPassword="True" Placeholder="password"/>
+                    <Label Text="Retype Password" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entRePassword" IsPassword="True" Placeholder="retype password"/>
+                    <Label x:Name="errorLabel" Style="{StaticResource ErrorStyle}"/>
+
+                    <!-- Picker for Height -->
+                    <StackLayout x:Name="slHeight" Orientation="Horizontal">
+                        <Label Text="Height (m): " Style="{StaticResource HeadingStyle}"/>
+                        <Picker x:Name="pckHM">
+                            <Picker.Items>
+                                <x:String>0</x:String>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                            </Picker.Items>
+                            <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                        </Picker>
+                        <Picker x:Name="pckHCM"/>
+                    </StackLayout>
+
+                    <!-- Picker for Weight -->
+                    <StackLayout x:Name="slWeight" Orientation="Horizontal">
+                        <Label Text="Weight (kg): " Style="{StaticResource HeadingStyle}"/>
+                        <Picker x:Name="pckWKG"/>
+                    </StackLayout>
                 </StackLayout>
 
-                <!-- Picker for Weight -->
-                <StackLayout x:Name="slWeight" Orientation="Horizontal">
-                    <Label Text="Weight (kg): " Style="{StaticResource HeadingStyle}"/>
-                    <Picker x:Name="pckWKG"/>
+                <!-- Buttons -->
+                <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
+                    <Button x:Name="btnRegister" Text="Register" Clicked="BtnRegister_Clicked" Style="{StaticResource ButtonStyle}"/>
+                    <Button x:Name="btnBack" Text="Back" Clicked="BtnBack_Clicked" Style="{StaticResource ButtonStyle}"/>
                 </StackLayout>
-            </StackLayout>
-
-               <!-- Buttons -->
-            <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
-                <Button x:Name="btnRegister" Text="Register" Clicked="BtnRegister_Clicked" Style="{StaticResource ButtonStyle}"/>
-                <Button x:Name="btnBack" Text="Back" Clicked="BtnBack_Clicked" Style="{StaticResource ButtonStyle}"/>
-            </StackLayout>
-        </Grid>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

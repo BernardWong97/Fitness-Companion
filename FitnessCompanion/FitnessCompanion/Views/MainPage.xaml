@@ -30,7 +30,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <Grid x:Name="contentGrid" Margin="150, 10">
+        <Grid x:Name="contentGrid" Margin="10, 10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>

@@ -29,42 +29,44 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <Grid x:Name="contentGrid" Margin="150, 10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <ScrollView>
+            <Grid x:Name="contentGrid" Margin="10, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Label x:Name="titleLabel" Style="{StaticResource TitleStyle}" Grid.Row="0"/>
+                <Label x:Name="titleLabel" Style="{StaticResource TitleStyle}" Grid.Row="0"/>
 
-            <!-- User inputs -->
-            <StackLayout Orientation="Vertical" 
-                     VerticalOptions="FillAndExpand"
-                     HorizontalOptions="FillAndExpand"
-                     Spacing="15" Grid.Row="1">
-                <Label Text="Food Name" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entFoodname"/>
-                <Label Text="Calories" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entCal" Keyboard="Numeric"/>
-                <Label Text="Carbs" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entCarbs" Keyboard="Numeric"/>
-                <Label Text="Fat" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entFat" Keyboard="Numeric"/>
-                <Label Text="Protein" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entProtein" Keyboard="Numeric"/>
-                <Label Text="Sodium" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entSodium" Keyboard="Numeric"/>
-                <Label Text="Sugar" Style="{StaticResource HeadingStyle}"/>
-                <Entry x:Name="entSugar" Keyboard="Numeric" Completed="BtnAdd_Clicked"/>
-                <Label x:Name="errorLabel" Style="{StaticResource ErrorStyle}"/>
-            </StackLayout>
+                <!-- User inputs -->
+                <StackLayout Orientation="Vertical" 
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         Spacing="15" Grid.Row="1">
+                    <Label Text="Food Name" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entFoodname"/>
+                    <Label Text="Calories" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entCal" Keyboard="Numeric"/>
+                    <Label Text="Carbs" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entCarbs" Keyboard="Numeric"/>
+                    <Label Text="Fat" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entFat" Keyboard="Numeric"/>
+                    <Label Text="Protein" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entProtein" Keyboard="Numeric"/>
+                    <Label Text="Sodium" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entSodium" Keyboard="Numeric"/>
+                    <Label Text="Sugar" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entSugar" Keyboard="Numeric" Completed="BtnAdd_Clicked"/>
+                    <Label x:Name="errorLabel" Style="{StaticResource ErrorStyle}"/>
+                </StackLayout>
 
-            <!-- Buttons -->
-            <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
-                <Button x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked" Style="{StaticResource ButtonStyle}"/>
-                <Button x:Name="btnBack" Text="Back" Clicked="BtnBack_Clicked" Style="{StaticResource ButtonStyle}"/>
-            </StackLayout>
-        </Grid>
+                <!-- Buttons -->
+                <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
+                    <Button x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked" Style="{StaticResource ButtonStyle}"/>
+                    <Button x:Name="btnBack" Text="Back" Clicked="BtnBack_Clicked" Style="{StaticResource ButtonStyle}"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

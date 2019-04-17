@@ -30,7 +30,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <Grid x:Name="contentGrid" Margin="150, 10">
+        <Grid x:Name="contentGrid" Margin="10, 10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -69,32 +69,32 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
-                    <Label Text="Daily Calories Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Label Text="Calories Goal:" Style="{StaticResource HeadingStyle}"/>
                     <Entry x:Name="entCal" Text="{Binding DailyCalories}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-                    <Label Text="Daily Carbs Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Label Text="Carbs Goal:" Style="{StaticResource HeadingStyle}"/>
                     <Entry x:Name="entCarbs" Text="{Binding DailyCarbs}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
-                    <Label Text="Daily Fat Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Label Text="Fat Goal:" Style="{StaticResource HeadingStyle}"/>
                     <Entry x:Name="entFat" Text="{Binding DailyFat}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                    <Label Text="Daily Protein Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Label Text="Protein Goal:" Style="{StaticResource HeadingStyle}"/>
                     <Entry x:Name="entProtein" Text="{Binding DailyProtein}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
-                    <Label Text="Daily Sodium Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Label Text="Sodium Goal:" Style="{StaticResource HeadingStyle}"/>
                     <Entry x:Name="entSodium" Text="{Binding DailySodium}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
-                    <Label Text="Daily Sugar Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Label Text="Sugar Goal:" Style="{StaticResource HeadingStyle}"/>
                     <Entry x:Name="entSugar" Text="{Binding DailySugar}" Keyboard="Numeric"/>
                 </StackLayout>
 
