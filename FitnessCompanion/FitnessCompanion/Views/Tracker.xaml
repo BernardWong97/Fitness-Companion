@@ -40,6 +40,8 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <Label Text = "Daily Totals" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>
@@ -52,6 +54,7 @@
                 <Label Text = "Protein" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="4" TextColor="White"/>
                 <Label Text = "Sodium" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="5" TextColor="White"/>
                 <Label Text = "Sugar" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="6" TextColor="White"/>
+                <Label Grid.Row="3" Grid.Column="7" WidthRequest="20" HeightRequest="20"/>
             </Grid>
 
         </Grid>

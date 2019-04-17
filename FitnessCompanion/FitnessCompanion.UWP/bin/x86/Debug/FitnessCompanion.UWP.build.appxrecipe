@@ -649,6 +649,9 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\deleteIcon.png">
+      <PackagePath>deleteIcon.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

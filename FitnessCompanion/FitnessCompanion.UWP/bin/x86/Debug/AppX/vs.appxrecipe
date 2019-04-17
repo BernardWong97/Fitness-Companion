@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-04-17T02:51:19.342</Modified>
+      <Modified>2019-04-17T04:09:04.953</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\FitnessCompanion.UWP.exe">
       <PackagePath>entrypoint\FitnessCompanion.UWP.exe</PackagePath>
-      <Modified>2019-04-17T02:51:18.554</Modified>
+      <Modified>2019-04-17T04:09:04.178</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ASUS\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -716,7 +716,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion\bin\Debug\netstandard2.0\FitnessCompanion.dll">
       <PackagePath>FitnessCompanion.dll</PackagePath>
-      <Modified>2019-04-17T02:51:12.722</Modified>
+      <Modified>2019-04-17T04:08:58.407</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -857,6 +857,10 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-08T21:43:59.047</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\deleteIcon.png">
+      <PackagePath>deleteIcon.png</PackagePath>
+      <Modified>2019-04-17T03:24:33.547</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2019-04-08T21:43:59.052</Modified>
@@ -867,11 +871,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-04-17T02:51:18.387</Modified>
+      <Modified>2019-04-17T04:09:04.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-04-17T02:51:18.387</Modified>
+      <Modified>2019-04-17T04:09:04.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -883,11 +887,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-04-15T21:02:17.461</Modified>
+      <Modified>2019-04-17T03:32:23.861</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Xamarin\FitnessCompanion\FitnessCompanion\FitnessCompanion.UWP\bin\x86\Debug\Core\FitnessCompanion.UWP.exe">
       <PackagePath>FitnessCompanion.UWP.exe</PackagePath>
-      <Modified>2019-04-17T02:51:19.335</Modified>
+      <Modified>2019-04-17T04:09:04.947</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,26 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FitnessCompanion
 {
-    public class TrackerViewModel
-    {    
+    public class TrackerViewModel : BaseViewModel
+    {
         #region member attributes
+        public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<IntakesList> IntakeList { get; private set; } = new ObservableCollection<IntakesList>();
-        public List<Intake> BreakfastIntake { get; private set; } = new List<Intake>();
-        public List<Intake> LunchIntake { get; private set; } = new List<Intake>();
-        public List<Intake> DinnerIntake { get; private set; } = new List<Intake>();
-        public List<Intake> SnacksIntake { get; private set; } = new List<Intake>();
+        private List<Intake> breakfastIntake = new List<Intake>();
+        private List<Intake> lunchIntake = new List<Intake>();
+        private List<Intake> dinnerIntake = new List<Intake>();
+        private List<Intake> snacksIntake = new List<Intake>();
         public Grid BreakfastGrid;
         public Grid LunchGrid;
         public Grid DinnerGrid;
         public Grid SnacksGrid;
         public IDictionary<string, int> dailyTotals = new Dictionary<string, int>();
+        public Intake selectedIntake;
         private readonly IPageService _pageService;
+        public List<Intake> BreakfastIntake
+        {
+            get { return breakfastIntake; }
+            set { SetValue(ref breakfastIntake, value); }
+        }
+
+        public List<Intake> LunchIntake
+        {
+            get { return lunchIntake; }
+            set { SetValue(ref lunchIntake, value); }
+        }
+
+        public List<Intake> DinnerIntake
+        {
+            get { return dinnerIntake; }
+            set { SetValue(ref dinnerIntake, value); }
+        }
+
+        public List<Intake> SnacksIntake
+        {
+            get { return snacksIntake; }
+            set { SetValue(ref snacksIntake, value); }
+        }
+
         #endregion
 
         #region constructors
@@ -151,6 +178,22 @@ namespace FitnessCompanion
                     HorizontalTextAlignment = TextAlignment.Center,
                 }, 6, rowNum);
 
+                ImageButton deleteBtn = new ImageButton()
+                {
+                    Source = "deleteIcon.png",
+                    BackgroundColor = Color.LightGray,
+                    HorizontalOptions = LayoutOptions.Center,
+                    WidthRequest = 20,
+                    HeightRequest = 20,
+                };
+                deleteBtn.Clicked += (s, e) =>
+                {
+                    selectedIntake = intake;
+                    DeleteIntake(selectedIntake, title);
+                };
+
+                dataGrid.Children.Add(deleteBtn, 7, rowNum);
+
                 rowNum++;
             } // foreach
 
@@ -172,6 +215,32 @@ namespace FitnessCompanion
 
             return dataGrid;
         } // DataGrid()
+
+        public void DeleteIntake(Intake selectedIntake, string mealType)
+        {
+            switch (mealType)
+            {
+                case "Breakfast":
+                    BreakfastIntake.Remove(selectedIntake);
+                    IntakeList[0].Breakfast = BreakfastIntake;
+                    break;
+                case "Lunch":
+                    LunchIntake.Remove(selectedIntake);
+                    IntakeList[0].Lunch = LunchIntake;
+                    break;
+                case "Dinner":
+                    DinnerIntake.Remove(selectedIntake);
+                    IntakeList[0].Dinner = DinnerIntake;
+                    break;
+                case "Snacks":
+                    SnacksIntake.Remove(selectedIntake);
+                    IntakeList[0].Snacks = SnacksIntake;
+                    break;
+            } // switch
+
+            IntakesList.SaveIntakeListData(IntakeList);
+            _pageService.ChangeMainPage(new CaloriesTracker());
+        } // DeleteIntake()
 
         public void SetHeadings(Grid dataGrid, string title)
         {
