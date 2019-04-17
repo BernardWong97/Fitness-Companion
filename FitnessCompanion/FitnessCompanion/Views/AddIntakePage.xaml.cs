@@ -12,10 +12,13 @@ namespace FitnessCompanion
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddIntakePage : ContentPage
 	{
+        #region Member Attributes
         public List<Intake> IntakeList;
         public string MealType;
         public Intake NewIntake;
+        #endregion
 
+        #region Constructors
         public AddIntakePage(List<Intake> intakeList, string title)
         {
             InitializeComponent();
@@ -24,7 +27,15 @@ namespace FitnessCompanion
             MealType = title;
             titleLabel.Text = "Add " + MealType + " Food";
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Create a new Intake object from user inputs and add to the IntakeList
+        /// then update the local data file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAdd_Clicked(object sender, EventArgs e)
         {
             if (ValidateInputs())
@@ -41,8 +52,13 @@ namespace FitnessCompanion
                 IntakeList.Add(NewIntake);
                 (BindingContext as TrackerViewModel).UpdateIntakeList(IntakeList, MealType);
             }
-        }
+        } // BtnAdd_Clicked()
 
+        /// <summary>
+        /// Validates all the user inputs from the view by checking whether all fields are not empty
+        /// or inputs are not number when they need to be.
+        /// </summary>
+        /// <returns>true - if everything is alright/false - if inputs not numeric or a field is empty</returns>
         public bool ValidateInputs()
         {
             if (entFoodname.Text == null || entCal.Text == null || entCarbs.Text == null ||
@@ -63,14 +79,20 @@ namespace FitnessCompanion
             {
                 errorLabel.Text = "Successfully Added Intake!";
                 errorLabel.TextColor = Color.Green;
-            }
+            } // if..else..if
 
             return true;
-        }
+        } // ValidateInputs()
 
+        /// <summary>
+        /// Call TrackerViewModel.PopPage to pop a page from the navigation stack.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void BtnBack_Clicked(object sender, EventArgs e)
         {
             await(BindingContext as TrackerViewModel).PopPage();
-        }
-    }
-}
+        } // BtnBack_Clicked()
+        #endregion
+    } // class
+} // namespace

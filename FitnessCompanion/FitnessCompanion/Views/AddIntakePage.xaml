@@ -2,6 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessCompanion.AddIntakePage">
+
+    <ContentPage.Resources>
+        <Style x:Key="TitleStyle" TargetType="Label" >
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style x:Key="HeadingStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ErrorStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="7"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BackgroundColor" Value="Silver"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid x:Name="contentGrid" Margin="150, 10">
             <Grid.RowDefinitions>
@@ -10,32 +36,34 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label x:Name="titleLabel" HorizontalOptions="Center" Margin="0,10" Grid.Row="0"/>
+            <Label x:Name="titleLabel" Style="{StaticResource TitleStyle}" Grid.Row="0"/>
 
+            <!-- User inputs -->
             <StackLayout Orientation="Vertical" 
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand"
                      Spacing="15" Grid.Row="1">
-                <Label Text="Food Name"/>
+                <Label Text="Food Name" Style="{StaticResource HeadingStyle}"/>
                 <Entry x:Name="entFoodname"/>
-                <Label Text="Calories"/>
-                <Entry x:Name="entCal"/>
-                <Label Text="Carbs"/>
-                <Entry x:Name="entCarbs"/>
-                <Label Text="Fat"/>
-                <Entry x:Name="entFat"/>
-                <Label Text="Protein"/>
-                <Entry x:Name="entProtein"/>
-                <Label Text="Sodium"/>
-                <Entry x:Name="entSodium"/>
-                <Label Text="Sugar"/>
-                <Entry x:Name="entSugar"/>
-                <Label x:Name="errorLabel" TextColor="Red"/>
+                <Label Text="Calories" Style="{StaticResource HeadingStyle}"/>
+                <Entry x:Name="entCal" Keyboard="Numeric"/>
+                <Label Text="Carbs" Style="{StaticResource HeadingStyle}"/>
+                <Entry x:Name="entCarbs" Keyboard="Numeric"/>
+                <Label Text="Fat" Style="{StaticResource HeadingStyle}"/>
+                <Entry x:Name="entFat" Keyboard="Numeric"/>
+                <Label Text="Protein" Style="{StaticResource HeadingStyle}"/>
+                <Entry x:Name="entProtein" Keyboard="Numeric"/>
+                <Label Text="Sodium" Style="{StaticResource HeadingStyle}"/>
+                <Entry x:Name="entSodium" Keyboard="Numeric"/>
+                <Label Text="Sugar" Style="{StaticResource HeadingStyle}"/>
+                <Entry x:Name="entSugar" Keyboard="Numeric" Completed="BtnAdd_Clicked"/>
+                <Label x:Name="errorLabel" Style="{StaticResource ErrorStyle}"/>
             </StackLayout>
 
+            <!-- Buttons -->
             <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2">
-                <Button x:Name="btnAdd" Text="Add" Margin="2" Clicked="BtnAdd_Clicked"/>
-                <Button x:Name="btnBack" Text="Back" Margin="2" Clicked="BtnBack_Clicked"/>
+                <Button x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked" Style="{StaticResource ButtonStyle}"/>
+                <Button x:Name="btnBack" Text="Back" Clicked="BtnBack_Clicked" Style="{StaticResource ButtonStyle}"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

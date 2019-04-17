@@ -12,9 +12,11 @@ namespace FitnessCompanion
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CaloriesTracker : TabbedPage
     {
+        #region Constructors
         public CaloriesTracker ()
         {
             InitializeComponent();
         }
-    }
-}
+        #endregion
+    } // class
+} // namespace

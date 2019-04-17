@@ -3,6 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessCompanion.AccountPage"
              Title="Account">
+    
+    <ContentPage.Resources>
+        <Style x:Key="TitleStyle" TargetType="Label" >
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style x:Key="HeadingStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ErrorStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="7"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BackgroundColor" Value="Silver"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid x:Name="contentGrid" Margin="150, 10">
             <Grid.RowDefinitions>
@@ -11,9 +37,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label Text="Account" HorizontalOptions="Center"
-               Margin="0,10" Grid.Row="0"/>
+            <Label Text="Account" Style="{StaticResource TitleStyle}" Grid.Row="0"/>
 
+            <!-- Account information grid -->
             <Grid x:Name="infoGrid" HorizontalOptions="Center" Grid.Row="1" BindingContext="{Binding CurrentUser}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -33,50 +59,52 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                    <Label Text="Height: "/>
-                    <Entry x:Name="entH" Text="{Binding Height}"/>
+                    <Label Text="Height: " Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entH" Text="{Binding Height}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-                    <Label Text="Weight:"/>
-                    <Entry x:Name="entWeight" Text="{Binding Weight}"/>
+                    <Label Text="Weight:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entWeight" Text="{Binding Weight}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
-                    <Label Text="Daily Calories Goal:"/>
-                    <Entry x:Name="entCal" Text="{Binding DailyCalories}"/>
+                    <Label Text="Daily Calories Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entCal" Text="{Binding DailyCalories}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-                    <Label Text="Daily Carbs Goal:"/>
-                    <Entry x:Name="entCarbs" Text="{Binding DailyCarbs}"/>
+                    <Label Text="Daily Carbs Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entCarbs" Text="{Binding DailyCarbs}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
-                    <Label Text="Daily Fat Goal:"/>
-                    <Entry x:Name="entFat" Text="{Binding DailyFat}"/>
+                    <Label Text="Daily Fat Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entFat" Text="{Binding DailyFat}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                    <Label Text="Daily Protein Goal:"/>
-                    <Entry x:Name="entProtein" Text="{Binding DailyProtein}"/>
+                    <Label Text="Daily Protein Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entProtein" Text="{Binding DailyProtein}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
-                    <Label Text="Daily Sodium Goal:"/>
-                    <Entry x:Name="entSodium" Text="{Binding DailySodium}"/>
+                    <Label Text="Daily Sodium Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entSodium" Text="{Binding DailySodium}" Keyboard="Numeric"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
-                    <Label Text="Daily Sugar Goal:"/>
-                    <Entry x:Name="entSugar" Text="{Binding DailySugar}"/>
+                    <Label Text="Daily Sugar Goal:" Style="{StaticResource HeadingStyle}"/>
+                    <Entry x:Name="entSugar" Text="{Binding DailySugar}" Keyboard="Numeric"/>
                 </StackLayout>
 
-                <Label x:Name="errorLabel" HorizontalOptions="FillAndExpand" TextColor="Red" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label x:Name="errorLabel" HorizontalOptions="FillAndExpand" Style="{StaticResource ErrorStyle}" 
+                       Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
             </Grid>
 
+            <!-- Button -->
             <StackLayout Orientation="Horizontal" Margin="0,2" Grid.Row="2" HorizontalOptions="Center">
-                <Button x:Name="btnSave" Text="Save" Margin="2" Clicked="BtnSave_Clicked"/>
+                <Button x:Name="btnSave" Text="Save" Clicked="BtnSave_Clicked" Style="{StaticResource ButtonStyle}"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

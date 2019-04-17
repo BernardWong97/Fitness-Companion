@@ -3,6 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessCompanion.AboutPage"
              Title="About">
+
+    <ContentPage.Resources>
+        <Style x:Key="TitleStyle" TargetType="Label" >
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style x:Key="HeadingStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ErrorStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="7"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BackgroundColor" Value="Silver"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid x:Name="contentGrid" Margin="150, 10">
             <Grid.RowDefinitions>
@@ -12,22 +38,22 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label Text="About" HorizontalOptions="Center" Grid.Row="0"/>
+            <Label Text="About" Style="{StaticResource TitleStyle}" Grid.Row="0"/>
 
             <StackLayout HorizontalOptions="StartAndExpand" Grid.Row="1" Margin="2">
-                <Label Text="Description"/>
+                <Label Text="Description" Style="{StaticResource HeadingStyle}"/>
                 <Label x:Name="lblDesc" BackgroundColor="LightGray" Margin="1"/>
             </StackLayout>
 
             <StackLayout HorizontalOptions="StartAndExpand" Grid.Row="2" Margin="2">
-                <Label Text="Pages"/>
+                <Label Text="Pages" Style="{StaticResource HeadingStyle}"/>
                 <Label x:Name="lblPage1" BackgroundColor="LightGray" Margin="1"/>
                 <Label x:Name="lblPage2" BackgroundColor="LightGray" Margin="1"/>
                 <Label x:Name="lblPage3" BackgroundColor="LightGray" Margin="1"/>
             </StackLayout>
 
             <StackLayout HorizontalOptions="StartAndExpand" Grid.Row="3" Margin="2">
-                <Label Text="Contact"/>
+                <Label Text="Contact" Style="{StaticResource HeadingStyle}"/>
                 <Label Text="Author: Bernard Wong" BackgroundColor="LightGray" Margin="1"/>
                 <Label Text="Email: G00341962@gmit.ie" BackgroundColor="LightGray" Margin="1"/>
                 <Label Text="Github: https://github.com/BernardWong97" BackgroundColor="LightGray" Margin="1"/>

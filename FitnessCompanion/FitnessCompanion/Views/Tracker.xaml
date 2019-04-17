@@ -3,6 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessCompanion.Tracker"
              Title="Tracker">
+    
+    <ContentPage.Resources>
+        <Style x:Key="TitleStyle" TargetType="Label" >
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style x:Key="HeadingStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ErrorStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="7"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BackgroundColor" Value="Silver"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid x:Name="contentGrid" Margin="150, 10">
             <Grid.RowDefinitions>
@@ -14,9 +40,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label Text="Nutrition Intake Tracker" HorizontalOptions="Center"
-               Margin="0,10" Grid.Row="0"/>
+            <Label Text="Nutrition Intake Tracker" Style="{StaticResource TitleStyle}" Grid.Row="0"/>
 
+            <!-- Dynamically generate the four data grids from backend -->
             <Grid x:Name="breakfastGrid"/>
 
             <Grid x:Name="lunchGrid"/>
@@ -25,6 +51,7 @@
 
             <Grid x:Name="snacksGrid"/>
 
+            <!-- Footer of the page -->
             <Grid x:Name="dailyGrid" ColumnSpacing = "1" RowSpacing = "1" Padding = "2" Grid.Row="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -44,10 +71,12 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
+                <!-- Row titles -->
                 <Label Text = "Daily Totals" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>
                 <Label Text = "Daily Goal" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="1" Grid.Column="0" TextColor="Blue"/>
                 <Label Text = "Remaining" HorizontalTextAlignment="End" HorizontalOptions = "FillAndExpand" Grid.Row="2" Grid.Column="0" TextColor="Blue"/>
-                
+
+                <!-- Column titles -->
                 <Label Text = "Calories" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="1" TextColor="White"/>
                 <Label Text = "Carbs" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="2" TextColor="White"/>
                 <Label Text = "Fat" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="3" TextColor="White"/>
@@ -56,7 +85,6 @@
                 <Label Text = "Sugar" BackgroundColor = "Blue" HorizontalOptions = "FillAndExpand" Grid.Row="3" Grid.Column="6" TextColor="White"/>
                 <Label Grid.Row="3" Grid.Column="7" WidthRequest="20" HeightRequest="20"/>
             </Grid>
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

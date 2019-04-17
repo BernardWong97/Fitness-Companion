@@ -12,12 +12,18 @@ namespace FitnessCompanion
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AboutPage : ContentPage
 	{
-		public AboutPage ()
+        #region Constructors
+        public AboutPage ()
 		{
 			InitializeComponent ();
             SetLabels();
 		}
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Just a simple set label texts method.
+        /// </summary>
         public void SetLabels()
         {
             string description = "This is a Fitness Companion Application design to keep track " +
@@ -34,6 +40,7 @@ namespace FitnessCompanion
 
             string page3Desc = "Account Page: Where you can modify your nutrition goals and weight and height.";
             lblPage3.Text = page3Desc;
-        }
-	}
-}
+        } // SetLabels()
+        #endregion
+    } // class
+} // namespace

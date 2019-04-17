@@ -12,18 +12,31 @@ namespace FitnessCompanion
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AccountPage : ContentPage
 	{
-		public AccountPage ()
+        #region Member Attributes
+        public AccountPage ()
 		{
 			InitializeComponent ();
             this.BindingContext = new MainPageViewModel(new PageService());
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Validates user inputs, if true, save the user list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSave_Clicked(object sender, EventArgs e)
         {
             if(ValidateInputs())
                 (BindingContext as MainPageViewModel).SaveUserList();
-        }
+        } // BtnSave_Clicked()
 
+        /// <summary>
+        /// Validates all the user inputs from the view by checking whether all fields are not empty
+        /// or inputs are not number when they need to be.
+        /// </summary>
+        /// <returns>true - if everything is alright/false - if inputs not numeric or a field is empty</returns>
         public bool ValidateInputs()
         {
             if (entH.Text == "" || entWeight.Text == "" || entCal.Text == "" || entCarbs.Text == "" ||
@@ -47,9 +60,10 @@ namespace FitnessCompanion
             {
                 errorLabel.Text = "Successfully Saved!";
                 errorLabel.TextColor = Color.Green;
-            }
+            } // if..else..if
 
             return true;
-        }
-    }
-}
+        } // ValidateInputs()
+        #endregion
+    } // class
+} // namespace
