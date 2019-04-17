@@ -59,6 +59,19 @@ namespace FitnessCompanion
 
             return intakesList;
         } // ReadIntakeListData()
+
+        public static void SaveIntakeListData(ObservableCollection<IntakesList> saveList)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+            string filename = Path.Combine(path, Util.INTAKE_FILE);
+
+            using (var writer = new StreamWriter(filename, false))
+            {
+                string jsonText = JsonConvert.SerializeObject(saveList);
+                writer.WriteLine(jsonText);
+            }
+        } // SaveIntakeListData()
         #endregion
     } // class
 } // namespace

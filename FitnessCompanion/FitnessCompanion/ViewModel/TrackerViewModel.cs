@@ -51,6 +51,28 @@ namespace FitnessCompanion
             SnacksIntake = IntakeList[0].Snacks;
         } // ReadIntakeList()
 
+        public void UpdateIntakeList(List<Intake> newList, string mealType)
+        {
+            switch (mealType)
+            {
+                case "Breakfast":
+                    IntakeList[0].Breakfast = newList;
+                    break;
+                case "Lunch":
+                    IntakeList[0].Lunch = newList;
+                    break;
+                case "Dinner":
+                    IntakeList[0].Dinner = newList;
+                    break;
+                case "Snacks":
+                    IntakeList[0].Snacks = newList;
+                    break;
+            } // switch
+
+            IntakesList.SaveIntakeListData(IntakeList);
+            _pageService.ChangeMainPage(new NavigationPage(new CaloriesTracker()));
+        } // UpdateIntakeList()
+
         public Grid DataGrid(List<Intake> intakeList, string title)
         {
             Grid dataGrid = new Grid { ColumnSpacing = 1, RowSpacing = 1, Padding = 2};
@@ -143,7 +165,7 @@ namespace FitnessCompanion
             };
             addButton.Clicked += async (s, e) =>
             {
-                await _pageService.PushAsync(new AddIntakePage(intakeList));
+                await _pageService.PushAsync(new AddIntakePage(intakeList, title));
             };
 
             dataGrid.Children.Add(addButton, 0, rowNum + 1);
