@@ -61,10 +61,16 @@ namespace FitnessCompanion
             }
             else
             {
-                errorLabel.Text = "";
+                errorLabel.Text = "Successfully Added Intake!";
+                errorLabel.TextColor = Color.Green;
             }
 
             return true;
+        }
+
+        private async void BtnBack_Clicked(object sender, EventArgs e)
+        {
+            await(BindingContext as TrackerViewModel).PopPage();
         }
     }
 }

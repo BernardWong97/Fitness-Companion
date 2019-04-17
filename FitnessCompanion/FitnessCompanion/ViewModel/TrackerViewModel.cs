@@ -78,7 +78,7 @@ namespace FitnessCompanion
             SnacksIntake = IntakeList[0].Snacks;
         } // ReadIntakeList()
 
-        public void UpdateIntakeList(List<Intake> newList, string mealType)
+        public async void UpdateIntakeList(List<Intake> newList, string mealType)
         {
             switch (mealType)
             {
@@ -97,6 +97,7 @@ namespace FitnessCompanion
             } // switch
 
             IntakesList.SaveIntakeListData(IntakeList);
+            await Task.Delay(2000);
             _pageService.PopAsync();
         } // UpdateIntakeList()
 
@@ -440,6 +441,11 @@ namespace FitnessCompanion
 
             return remaining.ToString();
         } // CalcRemaining()
+
+        public async Task PopPage()
+        {
+            await _pageService.PopAsync();
+        }
         #endregion
     } // class
 } // namespace
