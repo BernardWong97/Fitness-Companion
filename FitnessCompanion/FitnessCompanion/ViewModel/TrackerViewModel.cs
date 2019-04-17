@@ -13,17 +13,21 @@ namespace FitnessCompanion
         #region member attributes
         public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<IntakesList> IntakeList { get; private set; } = new ObservableCollection<IntakesList>();
+
         private List<Intake> breakfastIntake = new List<Intake>();
         private List<Intake> lunchIntake = new List<Intake>();
         private List<Intake> dinnerIntake = new List<Intake>();
         private List<Intake> snacksIntake = new List<Intake>();
+
         public Grid BreakfastGrid;
         public Grid LunchGrid;
         public Grid DinnerGrid;
         public Grid SnacksGrid;
+
         public IDictionary<string, int> dailyTotals = new Dictionary<string, int>();
         public Intake selectedIntake;
         private readonly IPageService _pageService;
+
         public List<Intake> BreakfastIntake
         {
             get { return breakfastIntake; }
@@ -47,10 +51,9 @@ namespace FitnessCompanion
             get { return snacksIntake; }
             set { SetValue(ref snacksIntake, value); }
         }
-
         #endregion
 
-        #region constructors
+        #region Constructors
         public TrackerViewModel(IPageService pageService)
         {
             _pageService = pageService;
@@ -69,6 +72,9 @@ namespace FitnessCompanion
         #endregion
 
         #region public methods
+        /// <summary>
+        /// Read IntakeListData and disassemble into different list of Intake
+        /// </summary>
         public void ReadIntakeList()
         {
             IntakeList = IntakesList.ReadIntakeListData();
@@ -78,6 +84,12 @@ namespace FitnessCompanion
             SnacksIntake = IntakeList[0].Snacks;
         } // ReadIntakeList()
 
+        /// <summary>
+        /// After added Intake object into the new list,
+        /// overwrite the old list into the new list.
+        /// </summary>
+        /// <param name="newList">The updated list</param>
+        /// <param name="mealType">Each mealType has different list</param>
         public async void UpdateIntakeList(List<Intake> newList, string mealType)
         {
             switch (mealType)
@@ -97,31 +109,37 @@ namespace FitnessCompanion
             } // switch
 
             IntakesList.SaveIntakeListData(IntakeList);
-            await Task.Delay(2000);
-            _pageService.PopAsync();
+            await Task.Delay(2000); // Delay to let user read message
+            await _pageService.PopAsync(); // Called from AddIntakePage, pop that page and go back to TrackerPage
         } // UpdateIntakeList()
 
-        public Grid DataGrid(List<Intake> intakeList, string title)
+        /// <summary>
+        /// Dynamically create a grid contains all the updated data about intakes.
+        /// </summary>
+        /// <param name="intakeList">The list that needs to be on the grid view</param>
+        /// <param name="mealType">The meal type determines which list to take</param>
+        /// <returns>The generated data grid</returns>
+        public Grid DataGrid(List<Intake> intakeList, string mealType)
         {
             Grid dataGrid = new Grid { ColumnSpacing = 1, RowSpacing = 1, Padding = 2};
             int rowNum = 1;
 
-            for(var i = 0; i < intakeList.Count + 3; i++)
+            for(var i = 0; i < intakeList.Count + 2; i++) // create row definitions based on how many intakes in the list + meal type & total
             {
                 dataGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
             } // for
 
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i <= 7; i++) // create 7 standard columns (last column for delete button image)
             {
-                if (i == 0)
+                if (i == 0) // first column should be longer
                     dataGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
                 dataGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
             } // for
 
-            SetHeadings(dataGrid, title);
+            SetHeadings(dataGrid, mealType);
             
-            foreach (var intake in intakeList)
+            foreach (var intake in intakeList) // for each intake, label each data onto the cell
             {
                 dataGrid.Children.Add(new Label()
                 {
@@ -129,7 +147,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Start,
-                }, 0, rowNum);
+                }, 0, rowNum); // name
 
                 dataGrid.Children.Add(new Label()
                 {
@@ -137,7 +155,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Center,
-                }, 1, rowNum);
+                }, 1, rowNum); // calories
 
                 dataGrid.Children.Add(new Label()
                 {
@@ -145,7 +163,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Center,
-                }, 2, rowNum);
+                }, 2, rowNum); // carbs
 
                 dataGrid.Children.Add(new Label()
                 {
@@ -153,7 +171,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Center,
-                }, 3, rowNum);
+                }, 3, rowNum); // fat
 
                 dataGrid.Children.Add(new Label()
                 {
@@ -161,7 +179,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Center,
-                }, 4, rowNum);
+                }, 4, rowNum); // protein
 
                 dataGrid.Children.Add(new Label()
                 {
@@ -169,7 +187,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Center,
-                }, 5, rowNum);
+                }, 5, rowNum); // sodium
 
                 dataGrid.Children.Add(new Label()
                 {
@@ -177,7 +195,7 @@ namespace FitnessCompanion
                     BackgroundColor = Color.LightGray,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     HorizontalTextAlignment = TextAlignment.Center,
-                }, 6, rowNum);
+                }, 6, rowNum); // sugar
 
                 ImageButton deleteBtn = new ImageButton()
                 {
@@ -190,7 +208,7 @@ namespace FitnessCompanion
                 deleteBtn.Clicked += (s, e) =>
                 {
                     selectedIntake = intake;
-                    DeleteIntake(selectedIntake, title);
+                    DeleteIntake(selectedIntake, mealType);
                 };
 
                 dataGrid.Children.Add(deleteBtn, 7, rowNum);
@@ -209,7 +227,7 @@ namespace FitnessCompanion
             };
             addButton.Clicked += async (s, e) =>
             {
-                await _pageService.PushAsync(new AddIntakePage(intakeList, title));
+                await _pageService.PushAsync(new AddIntakePage(intakeList, mealType));
             };
 
             dataGrid.Children.Add(addButton, 0, rowNum + 1);
@@ -217,6 +235,11 @@ namespace FitnessCompanion
             return dataGrid;
         } // DataGrid()
 
+        /// <summary>
+        /// Delete the row of Intake.
+        /// </summary>
+        /// <param name="selectedIntake">The selected intake to be delete</param>
+        /// <param name="mealType">The meal type of the intake</param>
         public void DeleteIntake(Intake selectedIntake, string mealType)
         {
             switch (mealType)
@@ -240,18 +263,24 @@ namespace FitnessCompanion
             } // switch
 
             IntakesList.SaveIntakeListData(IntakeList);
-            _pageService.ChangeMainPage(new CaloriesTracker());
+            _pageService.ChangeMainPage(new CaloriesTracker()); // As data has changed, need to refresh page
         } // DeleteIntake()
 
-        public void SetHeadings(Grid dataGrid, string title)
+        /// <summary>
+        /// Set the headings of each data grid
+        /// </summary>
+        /// <param name="dataGrid">The targeted data grid to be set</param>
+        /// <param name="mealType">The meal type of the data grid</param>
+        public void SetHeadings(Grid dataGrid, string mealType)
         {
             string txt = "";
-            for(var i = 0; i < 7; i++)
+
+            for(var i = 0; i < 7; i++) // for each column
             {
                 switch (i)
                 {
                     case 0:
-                        txt = title;
+                        txt = mealType;
                         break;
                     case 1:
                         txt = "Calories";
@@ -282,7 +311,7 @@ namespace FitnessCompanion
                     TextColor = Color.White
                 };
 
-                if (i == 0)
+                if (i == 0) // if first column, be the heading of the grid
                 {
                     label.BackgroundColor = Color.White;
                     label.TextColor = Color.Blue;
@@ -291,16 +320,21 @@ namespace FitnessCompanion
                     label.HorizontalTextAlignment = TextAlignment.Start;
                 } // if
                     
-
                 dataGrid.Children.Add(label, i, 0);
             } // for
         } // SetHeadings()
 
+        /// <summary>
+        /// Set the footing of each data grid.
+        /// </summary>
+        /// <param name="dataGrid">The targeted data grid to be set</param>
+        /// <param name="intakeList">Needed to calculate total nutritions per meal type</param>
+        /// <param name="rowNum">Row number depends on how many Intakes are there, need to be the last row</param>
         public void SetFootings(Grid dataGrid, List<Intake> intakeList, int rowNum)
         {
             string txt = "";
 
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < 7; i++) // for each column
             {
                 switch (i)
                 {
@@ -336,7 +370,7 @@ namespace FitnessCompanion
                     TextColor = Color.Blue,
                 };
 
-                if(i == 0)
+                if(i == 0) // if first column, be the title
                 {
                     label.BackgroundColor = Color.White;
                     label.HorizontalTextAlignment = TextAlignment.End;
@@ -344,15 +378,21 @@ namespace FitnessCompanion
 
                 dataGrid.Children.Add(label, i, rowNum);
             } // for
-
         } // SetFootings()
 
-        public string CalcTotals(List<Intake> intakeList, string nutrientType)
+        /// <summary>
+        /// Calculate the total nutrition values in each data grid.
+        /// </summary>
+        /// <param name="intakeList">The targeted list contains all the values to be added</param>
+        /// <param name="nutritionType">The type of nutrition determine which value should be adding</param>
+        /// <returns>the total values of that nutrition type</returns>
+        public string CalcTotals(List<Intake> intakeList, string nutritionType)
         {
             int total = 0;
+
             foreach(var intake in intakeList)
             {
-                switch (nutrientType)
+                switch (nutritionType)
                 {
                     case "Calories":
                         total += intake.Calories;
@@ -377,36 +417,48 @@ namespace FitnessCompanion
 
             int value = 0;
 
+            // Find the key value pair in dailyTotals Dictionary
             foreach(var kv in dailyTotals)
             {
-                if (kv.Key == nutrientType)
+                if (kv.Key == nutritionType)
                 {
                     value = kv.Value + total;
                 } // if  
             } // foreach
 
-            dailyTotals.Remove(nutrientType);
-            dailyTotals.Add(nutrientType, value);
+            // Dictionary is immutable, so need to remove and re-add
+            dailyTotals.Remove(nutritionType);
+            dailyTotals.Add(nutritionType, value);
 
             return total.ToString();
         } // CalcTotals()
 
-        public string CalcDaily(string nutrientType)
+        /// <summary>
+        /// Get the total nutrition values of each nutrientType
+        /// </summary>
+        /// <param name="nutritionType">The nutrition type that needs to get the values</param>
+        /// <returns>The total nutrition values or "Failed to get KeyValue"</returns>
+        public string CalcDaily(string nutritionType)
         {
             foreach(var kv in dailyTotals)
             {
-                if (kv.Key == nutrientType)
+                if (kv.Key == nutritionType)
                     return kv.Value.ToString();
             } // foreach
 
             return "Fail to get KeyValue";
         } // CalcDaily()
 
-        public string CalcRemaining(string nutrientType)
+        /// <summary>
+        /// Get the remaining nutrition values where User goals - Total values.
+        /// </summary>
+        /// <param name="nutritionType">The nutrition type that needs to get the values</param>
+        /// <returns>The remaining nutrition values or 0 if goal reached</returns>
+        public string CalcRemaining(string nutritionType)
         {
             int remaining = 0;
 
-            switch (nutrientType)
+            switch (nutritionType)
             {
                 case "Calories":
                     remaining = Util.currentUser.DailyCalories;
@@ -430,7 +482,7 @@ namespace FitnessCompanion
 
             foreach(var kv in dailyTotals)
             {
-                if(kv.Key == nutrientType)
+                if(kv.Key == nutritionType)
                 {
                     remaining -= kv.Value;
                 } // if
@@ -442,6 +494,10 @@ namespace FitnessCompanion
             return remaining.ToString();
         } // CalcRemaining()
 
+        /// <summary>
+        /// Pop a page from navigation stack.
+        /// </summary>
+        /// <returns>Task</returns>
         public async Task PopPage()
         {
             await _pageService.PopAsync();

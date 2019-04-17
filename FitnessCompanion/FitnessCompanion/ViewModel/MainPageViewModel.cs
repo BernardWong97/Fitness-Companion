@@ -9,7 +9,7 @@ namespace FitnessCompanion
 {
     class MainPageViewModel : BaseViewModel
     {
-        #region member attributes
+        #region Member Attributes
         public event PropertyChangedEventHandler PropertyChanged;
         private User currentUser;
         public ObservableCollection<User> UsersList { get; private set; } = new ObservableCollection<User>();
@@ -32,11 +32,17 @@ namespace FitnessCompanion
         #endregion
 
         #region public methods
+        /// <summary>
+        /// Read the user list.
+        /// </summary>
         public void ReadUserList()
         {
             UsersList = User.ReadUserListData();
         } // ReadUserList()
 
+        /// <summary>
+        /// Overwrite the old User to the updated User object and save the list.
+        /// </summary>
         public void SaveUserList()
         {
             int index = 0;
@@ -52,6 +58,11 @@ namespace FitnessCompanion
             User.SaveUserListData(UsersList);
         } // SaveUserList()
 
+        /// <summary>
+        /// Validate login by checking if the User object contains in the list.
+        /// </summary>
+        /// <param name="loggingUser">The logging User object</param>
+        /// <returns>true if login success, else return false</returns>
         public bool Login(User loggingUser)
         {
             bool success = false;
@@ -65,12 +76,17 @@ namespace FitnessCompanion
                     Util.currentUser = u;
                     _pageService.ChangeMainPage(new CaloriesTracker());
                     break;
-                }
-            }
+                } // if
+            } // foreach
 
             return success;
         } // Login()
 
+        /// <summary>
+        /// push RegisterPage if parse true, else pop a page from navigation stack.
+        /// </summary>
+        /// <param name="push">The boolean determines to push or pop the navigation stack</param>
+        /// <returns>Task</returns>
         public async Task RegisterPage(bool push)
         {
             if (push)
@@ -79,6 +95,12 @@ namespace FitnessCompanion
                 await _pageService.PopAsync();
         } // RegisterPage()
 
+        /// <summary>
+        /// Check if username exist, if true, return false, else add to list and save,
+        /// return true
+        /// </summary>
+        /// <param name="registerUser">User object that needs to be registered</param>
+        /// <returns>false if username exist, true if success</returns>
         public bool Register(User registerUser)
         {
             foreach(User u in UsersList)
